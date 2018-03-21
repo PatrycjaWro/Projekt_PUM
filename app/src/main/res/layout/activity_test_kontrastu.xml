@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.mirella.badaniewzroku.TestKontrastu">
+    tools:context="com.example.mirella.badaniewzroku.TestKontrastu"
+    android:layout_margin="15dp"
+    >
 
 
     <TextView
@@ -22,9 +24,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/imageE"
-        android:layout_alignStart="@+id/imageE"
+        android:layout_alignStart="@+id/btn_down"
         android:layout_gravity="center"
         android:layout_marginBottom="36dp"
+        android:background="@color/colorPrimary"
         android:src="@drawable/ic_arrow_upward_black_24dp" />
 
     <ImageButton
@@ -33,6 +36,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignTop="@+id/imageE"
+        android:layout_marginTop="13dp"
+        android:background="@color/colorPrimary"
         android:src="@drawable/ic_arrow_back_black_24dp" />
 
     <ImageButton
@@ -40,8 +45,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
-        android:layout_alignTop="@+id/imageE"
+        android:layout_alignTop="@+id/btn_left"
         android:layout_gravity="right"
+        android:background="@color/colorPrimary"
         android:src="@drawable/ic_arrow_forward_black_24dp" />
 
     <ImageButton
@@ -52,14 +58,15 @@
         android:layout_centerHorizontal="true"
         android:layout_gravity="center"
         android:layout_marginBottom="158dp"
-        android:src="@drawable/ic_arrow_downward_black_24dp" />
+        android:src="@drawable/ic_arrow_downward_black_24dp"
+        android:background="@color/colorPrimary"/>
 
     <ImageView
         android:id="@+id/imageE"
         android:layout_width="90dp"
         android:layout_height="90dp"
         android:layout_above="@+id/btn_down"
-        android:layout_alignStart="@+id/btn_down"
-        android:layout_marginBottom="27dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="29dp"
         android:src="@drawable/c" />
 </RelativeLayout>
