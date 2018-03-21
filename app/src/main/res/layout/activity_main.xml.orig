@@ -4,6 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+<<<<<<< HEAD
+    android:layout_centerInParent="@android:"
+=======
+>>>>>>> 0c953226686a97363709e92f9f5459c556467f3c
     android:orientation="vertical"
     tools:context="com.example.mirella.badaniewzroku.MainActivity">
 
