@@ -4,42 +4,39 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:layout_centerInParent="@android:"
+    android:orientation="vertical"
     tools:context="com.example.mirella.badaniewzroku.MainActivity">
-
-
-
 
     <EditText
         android:id="@+id/wpiszImie"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
         android:layout_weight="1"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Imię:"
-        android:layout_marginBottom="50dp"/>
+        android:text="Imię:" />
 
     <EditText
         android:id="@+id/wpiszNazwisko"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
         android:layout_weight="1"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Nazwisko:"
-        android:layout_marginBottom="50dp"/>
+        android:text="Nazwisko:" />
 
     <EditText
         android:id="@+id/wpiszWiek"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
         android:layout_weight="1"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Wiek:"
-        android:layout_marginBottom="50dp"/>
+        android:text="Wiek:" />
 
     <Button
         android:id="@+id/btnGotowe"
@@ -47,7 +44,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:background="@color/colorPrimary"
-        android:textColor="@android:color/white"
-        android:text="Gotowe!" />
+        android:text="Gotowe!"
+        android:textColor="@android:color/white" />
 
 </LinearLayout>

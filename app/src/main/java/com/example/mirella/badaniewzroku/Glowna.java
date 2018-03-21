@@ -6,14 +6,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-    public class Glowna extends AppCompatActivity {
+public class Glowna extends AppCompatActivity {
 
-        protected Button testOstr_btn;
-        protected Button testKontrastu_btn;
-        protected Button testWidzenia_btn;
-        protected Button testOgolny_btn;
+    protected Button testOstr_btn;
+    protected Button testKontrastu_btn;
+    protected Button testWidzenia_btn;
+    protected Button testOgolny_btn;
 
-        @Override
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_glowna);
@@ -23,29 +23,29 @@ import android.widget.Button;
         testWidzenia_btn = (Button) findViewById(R.id.testWidzenia_btn);
         testOgolny_btn = (Button) findViewById(R.id.testOgolny_btn);
 
-            testOstr_btn.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent intent = new Intent(Glowna.this, TestOstrosci.class);
-                    startActivity(intent);
-                }
-            });
+        testOstr_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Glowna.this, TestOstrosci.class);
+                startActivity(intent);
+            }
+        });
 
-            testKontrastu_btn.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent intent = new Intent(Glowna.this, TestKontrastu.class);
-                    startActivity(intent);
-                }
-            });
+        testKontrastu_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Glowna.this, TestKontrastu.class);
+                startActivity(intent);
+            }
+        });
 
-            testWidzenia_btn.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent intent = new Intent(Glowna.this, TestWidzeniaBarw.class);
-                    startActivity(intent);
-                }
-            });
+        testWidzenia_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Glowna.this, TestWidzeniaBarw.class);
+                startActivity(intent);
+            }
+        });
 
 //            testOgolny_btn.setOnClickListener(new View.OnClickListener() {
 //                @Override
@@ -54,5 +54,5 @@ import android.widget.Button;
 //                    startActivity(intent);
 //                }
 //            });
-        }
+    }
 }
