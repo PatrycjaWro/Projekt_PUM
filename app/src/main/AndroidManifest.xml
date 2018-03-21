@@ -16,7 +16,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+<<<<<<< HEAD
         <activity android:name=".TestOstrosci"></activity>
+=======
+        <activity android:name=".Glowna"></activity>
+>>>>>>> fbae8f4b6686d1458a6fc95e5c4e1fff5a9a1ecc
     </application>
 
 </manifest>
