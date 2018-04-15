@@ -6,35 +6,35 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class Glowna extends AppCompatActivity {
+public class MainView extends AppCompatActivity {
 
-    protected Button testOstr_btn;
-    protected Button testKontrastu_btn;
+    protected Button SharpTest_btn;
+    protected Button ContrastTest_btn;
     protected Button testWidzenia_btn;
     protected Button testOgolny_btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_glowna);
+        setContentView(R.layout.main_view);
 
-        testOstr_btn = (Button) findViewById(R.id.testOstr_btn);
-        testKontrastu_btn = (Button) findViewById(R.id.testKontrastu_btn);
+        SharpTest_btn = (Button) findViewById(R.id.testOstr_btn);
+        ContrastTest_btn = (Button) findViewById(R.id.testKontrastu_btn);
         testWidzenia_btn = (Button) findViewById(R.id.testWidzenia_btn);
         testOgolny_btn = (Button) findViewById(R.id.testOgolny_btn);
 
-        testOstr_btn.setOnClickListener(new View.OnClickListener() {
+        SharpTest_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Glowna.this, TestOstrosci.class);
+                Intent intent = new Intent(MainView.this, SharpTest.class);
                 startActivity(intent);
             }
         });
 
-        testKontrastu_btn.setOnClickListener(new View.OnClickListener() {
+        ContrastTest_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Glowna.this, TestKontrastu.class);
+                Intent intent = new Intent(MainView.this, ContrastTest.class);
                 startActivity(intent);
             }
         });
@@ -42,7 +42,7 @@ public class Glowna extends AppCompatActivity {
         testWidzenia_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Glowna.this, TestWidzeniaBarw.class);
+                Intent intent = new Intent(MainView.this, TestWidzeniaBarw.class);
                 startActivity(intent);
             }
         });
@@ -50,7 +50,7 @@ public class Glowna extends AppCompatActivity {
 //            testOgolny_btn.setOnClickListener(new View.OnClickListener() {
 //                @Override
 //                public void onClick(View view) {
-//                    Intent intent = new Intent(this, TestOstrosci.class);
+//                    Intent intent = new Intent(this, SharpTest.class);
 //                    startActivity(intent);
 //                }
 //            });

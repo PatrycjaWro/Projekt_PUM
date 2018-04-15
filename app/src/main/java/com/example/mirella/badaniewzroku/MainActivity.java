@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         btnGotowe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, Glowna.class);
+                Intent intent = new Intent(MainActivity.this, MainView.class);
                 startActivity(intent);
             }
         });
