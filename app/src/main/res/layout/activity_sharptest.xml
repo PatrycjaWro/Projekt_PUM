@@ -69,4 +69,5 @@
         android:layout_above="@+id/btn_down"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="25dp" />
+
 </RelativeLayout>

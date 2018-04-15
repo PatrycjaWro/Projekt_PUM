@@ -18,8 +18,8 @@ public class MainView extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_view);
 
-        SharpTest_btn = (Button) findViewById(R.id.testOstr_btn);
-        ContrastTest_btn = (Button) findViewById(R.id.testKontrastu_btn);
+        SharpTest_btn = (Button) findViewById(R.id.SharpTest_btn);
+        ContrastTest_btn = (Button) findViewById(R.id.ContrastTest_btn);
         testWidzenia_btn = (Button) findViewById(R.id.testWidzenia_btn);
         testOgolny_btn = (Button) findViewById(R.id.testOgolny_btn);
 
