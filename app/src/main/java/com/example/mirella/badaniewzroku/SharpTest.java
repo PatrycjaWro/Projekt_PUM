@@ -4,11 +4,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Random;
@@ -23,6 +21,7 @@ public class SharpTest extends AppCompatActivity {
     final Random rnd = new Random();
     int sum=0;
     int count=0;
+    int number;
     int width;
     int height;
     int newWidth;
@@ -39,18 +38,24 @@ public class SharpTest extends AppCompatActivity {
         btn_left = (ImageButton) findViewById(R.id.btn_left);
         imageE = (ImageView) findViewById(R.id.imageE);
 
-        final String str = "e_" + rnd.nextInt(3);
-        imageE.setImageDrawable
-                (
-                        getResources().getDrawable(getResourceID(str, "drawable",
-                                getApplicationContext()))
-                );
+        final int [] images = {R.drawable.e_0,R.drawable.e_1,R.drawable.e_2,R.drawable.e_3};
+        number=rnd.nextInt(3);
+        imageE.setImageResource(images[number]);
+
+//        final String image = "e_" + rnd.nextInt(3);
+//        imageE.setImageDrawable
+//                (
+//                        getResources().getDrawable(getResourceID(image, "drawable",
+//                                getApplicationContext()))
+//                );
 
         if(count>3) {
             width = imageE.getWidth();
             height = imageE.getHeight();
             newWidth = width/2;
             newHeight = height/2;
+            Toast.makeText(SharpTest.this,"count -3",
+                    Toast.LENGTH_SHORT).show();
         }
         else if(count >7)
         {
@@ -66,14 +71,14 @@ public class SharpTest extends AppCompatActivity {
             newWidth = width/2;
             newHeight = height/2;
         }
-        else if(count >14)
+        else if(count >15)
         {
             width = imageE.getWidth();
             height = imageE.getHeight();
             newWidth = width/2;
             newHeight = height/2;
         }
-        else if (count>18)
+        else if (count>19)
         {
             Toast.makeText(SharpTest.this,"Badanie zakończone!",
                     Toast.LENGTH_SHORT).show();
@@ -84,7 +89,7 @@ public class SharpTest extends AppCompatActivity {
          btn_left.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View view) {
-                 if (str=="e_"+0) {
+                 if (number==0) {
                      sum += 1;
                      count=count+1;
                      Toast.makeText(SharpTest.this,"0 - if",
@@ -96,19 +101,15 @@ public class SharpTest extends AppCompatActivity {
                      Toast.makeText(SharpTest.this,"0 - else",
                              Toast.LENGTH_SHORT).show();
                  }
-                 final String str = "e_" + rnd.nextInt(3);
-                 imageE.setImageDrawable
-                         (
-                                 getResources().getDrawable(getResourceID(str, "drawable",
-                                         getApplicationContext()))
-                         );
+                 number=rnd.nextInt(3);
+                 imageE.setImageResource(images[number]);
              }
          });
 
          btn_up.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View view) {
-                 if (str=="e_"+1) {
+                 if (number==1) {
                      sum += 1;
                      count+=1;
                      Toast.makeText(SharpTest.this,"1 - if",
@@ -119,19 +120,15 @@ public class SharpTest extends AppCompatActivity {
                      Toast.makeText(SharpTest.this,"1 - else",
                              Toast.LENGTH_SHORT).show();
                  }
-                 final String str = "e_" + rnd.nextInt(3);
-                 imageE.setImageDrawable
-                         (
-                                 getResources().getDrawable(getResourceID(str, "drawable",
-                                         getApplicationContext()))
-                         );
+                 number=rnd.nextInt(3);
+                 imageE.setImageResource(images[number]);
              }
          });
 
          btn_right.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View view) {
-                 if (str=="e_"+2) {
+                 if (number==2) {
                      sum += 1;
                      count+=1;
                      Toast.makeText(SharpTest.this,"2 - if",
@@ -142,19 +139,15 @@ public class SharpTest extends AppCompatActivity {
                      Toast.makeText(SharpTest.this,"2 - else",
                              Toast.LENGTH_SHORT).show();
                  }
-                 final String str = "e_" + rnd.nextInt(3);
-                 imageE.setImageDrawable
-                         (
-                                 getResources().getDrawable(getResourceID(str, "drawable",
-                                         getApplicationContext()))
-                         );
+                 number=rnd.nextInt(3);
+                 imageE.setImageResource(images[number]);
              }
          });
 
          btn_down.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View view) {
-                 if (str=="e_"+3) {
+                 if (number==3) {
                      sum += 1;
                      count+=1;
                      Toast.makeText(SharpTest.this,"3 - if",
@@ -166,29 +159,24 @@ public class SharpTest extends AppCompatActivity {
                      Toast.makeText(SharpTest.this,"3 - else",
                              Toast.LENGTH_SHORT).show();
                  }
-                 final String str = "e_" + rnd.nextInt(3);
-                 imageE.setImageDrawable
-                         (
-                                 getResources().getDrawable(getResourceID(str, "drawable",
-                                         getApplicationContext()))
-                         );
+
              }
          });
     }
 
-    protected final static int getResourceID (final String resName, final String resType, final Context ctx)
-    {
-            final int ResourceID =
-                    ctx.getResources().getIdentifier(resName, resType,
-                            ctx.getApplicationInfo().packageName);
-            if (ResourceID == 0) {
-                throw new IllegalArgumentException
-                        (
-                                "No resource string found with name " + resName
-                        );
-            }
-            else {
-                return ResourceID;
-            }
-    }
+//    protected final static int getResourceID (final String resName, final String resType, final Context ctx)
+//    {
+//            final int ResourceID =
+//                    ctx.getResources().getIdentifier(resName, resType,
+//                            ctx.getApplicationInfo().packageName);
+//            if (ResourceID == 0) {
+//                throw new IllegalArgumentException
+//                        (
+//                                "No resource string found with name " + resName
+//                        );
+//            }
+//            else {
+//                return ResourceID;
+//            }
+//    }
 }
