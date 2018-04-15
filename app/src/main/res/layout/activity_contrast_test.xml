@@ -4,28 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="15dp"
+    android:layout_margin="20dp"
     tools:context="com.example.mirella.badaniewzroku.ContrastTest">
 
 
     <TextView
+        android:id="@+id/textView_contrasttest"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
         android:layout_gravity="center"
         android:text="Test kontrastu widzenia"
         android:textAlignment="center"
-        android:textSize="20dp" />
+        android:textSize="30dp"
+        android:layout_marginBottom="30dp" />
 
     <ImageButton
         android:id="@+id/btn_up"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/imageC"
-        android:layout_alignStart="@+id/btn_down"
-        android:layout_gravity="center"
-        android:layout_marginBottom="36dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="110dp"
+        android:layout_marginBottom="100dp"
         android:background="@color/colorPrimary"
         android:src="@drawable/ic_arrow_upward_black_24dp" />
 
@@ -34,20 +33,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_alignTop="@+id/imageC"
-        android:layout_marginTop="13dp"
         android:background="@color/colorPrimary"
-        android:src="@drawable/ic_arrow_back_black_24dp" />
+        android:src="@drawable/ic_arrow_back_black_24dp"
+        android:layout_marginTop="210dp" />
 
     <ImageButton
         android:id="@+id/btn_right"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
-        android:layout_alignTop="@+id/btn_left"
         android:layout_gravity="right"
         android:background="@color/colorPrimary"
-        android:src="@drawable/ic_arrow_forward_black_24dp" />
+        android:src="@drawable/ic_arrow_forward_black_24dp"
+        android:layout_marginTop="210dp"/>
 
     <ImageButton
         android:id="@+id/btn_down"
@@ -56,15 +54,14 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_gravity="center"
-        android:layout_marginBottom="158dp"
-        android:background="@color/colorPrimary"
-        android:src="@drawable/ic_arrow_downward_black_24dp" />
+        android:layout_marginBottom="110dp"
+        android:src="@drawable/ic_arrow_downward_black_24dp"
+        android:background="@color/colorPrimary"/>
 
     <ImageView
         android:id="@+id/imageC"
         android:layout_width="90dp"
         android:layout_height="90dp"
-        android:layout_above="@+id/btn_down"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="29dp" />
+        android:layout_centerVertical="true" />
 </RelativeLayout>

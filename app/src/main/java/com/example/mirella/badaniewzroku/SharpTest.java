@@ -25,10 +25,6 @@ public class SharpTest extends AppCompatActivity {
     int sum=0;
     int count=0;
     int number;
-    int width;
-    int height;
-    int newWidth;
-    int newHeight;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
