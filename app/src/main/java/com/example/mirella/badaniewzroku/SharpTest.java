@@ -4,9 +4,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import java.util.Random;
@@ -38,71 +41,52 @@ public class SharpTest extends AppCompatActivity {
         btn_left = (ImageButton) findViewById(R.id.btn_left);
         imageE = (ImageView) findViewById(R.id.imageE);
 
+
         final int [] images = {R.drawable.e_0,R.drawable.e_1,R.drawable.e_2,R.drawable.e_3};
         number=rnd.nextInt(3);
         imageE.setImageResource(images[number]);
-
-//        final String image = "e_" + rnd.nextInt(3);
-//        imageE.setImageDrawable
-//                (
-//                        getResources().getDrawable(getResourceID(image, "drawable",
-//                                getApplicationContext()))
-//                );
-
-        if(count>3) {
-            width = imageE.getWidth();
-            height = imageE.getHeight();
-            newWidth = width/2;
-            newHeight = height/2;
-            Toast.makeText(SharpTest.this,"count -3",
-                    Toast.LENGTH_SHORT).show();
-        }
-        else if(count >7)
-        {
-            width = imageE.getWidth();
-            height = imageE.getHeight();
-            newWidth = width/2;
-            newHeight = height/2;
-        }
-        else if(count >11)
-        {
-            width = imageE.getWidth();
-            height = imageE.getHeight();
-            newWidth = width/2;
-            newHeight = height/2;
-        }
-        else if(count >15)
-        {
-            width = imageE.getWidth();
-            height = imageE.getHeight();
-            newWidth = width/2;
-            newHeight = height/2;
-        }
-        else if (count>19)
-        {
-            Toast.makeText(SharpTest.this,"Badanie zakończone!",
-                    Toast.LENGTH_SHORT).show();
-            Intent intent  = new Intent(this,MainView.class);
-            startActivity(intent);
-        }
 
          btn_left.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View view) {
                  if (number==0) {
                      sum += 1;
-                     count=count+1;
-                     Toast.makeText(SharpTest.this,"0 - if",
-                             Toast.LENGTH_SHORT).show();
+                     count+=1;
                  }
                  else {
                      sum += 0;
                      count+=1;
-                     Toast.makeText(SharpTest.this,"0 - else",
-                             Toast.LENGTH_SHORT).show();
                  }
+
                  number=rnd.nextInt(3);
                  imageE.setImageResource(images[number]);
+
+                 if(count>3 && count <=7) {
+                    RelativeLayout.LayoutParams parms = new RelativeLayout.LayoutParams(180,180);
+                    imageE.setLayoutParams(parms);
+                 }
+                 else if(count >7 && count <=11)
+                 {
+                     RelativeLayout.LayoutParams parms = new RelativeLayout.LayoutParams(140,140);
+                     imageE.setLayoutParams(parms);
+                 }
+                 else if(count >11 && count <=15)
+                 {
+                     RelativeLayout.LayoutParams parms = new RelativeLayout.LayoutParams(100,100);
+                     imageE.setLayoutParams(parms);
+                 }
+                 else if(count >15 && count <=19)
+                 {
+                     RelativeLayout.LayoutParams parms = new RelativeLayout.LayoutParams(70,70);
+                     imageE.setLayoutParams(parms);
+                 }
+                 else if (count>19)
+                 {
+                     Toast.makeText(SharpTest.this,"Badanie zakończone!",
+                             Toast.LENGTH_SHORT).show();
+                     Intent intent  = new Intent(SharpTest.this,MainView.class);
+                     startActivity(intent);
+                 }
              }
          });
 
@@ -112,16 +96,41 @@ public class SharpTest extends AppCompatActivity {
                  if (number==1) {
                      sum += 1;
                      count+=1;
-                     Toast.makeText(SharpTest.this,"1 - if",
-                             Toast.LENGTH_SHORT).show();
-                 } else {
+                 }
+                 else {
                      sum += 0;
                      count+=1;
-                     Toast.makeText(SharpTest.this,"1 - else",
-                             Toast.LENGTH_SHORT).show();
                  }
+
                  number=rnd.nextInt(3);
                  imageE.setImageResource(images[number]);
+
+                 if(count>3 && count <=7) {
+                     RelativeLayout.LayoutParams parms = new RelativeLayout.LayoutParams(180,180);
+                     imageE.setLayoutParams(parms);
+                 }
+                 else if(count >7 && count <=11)
+                 {
+                     RelativeLayout.LayoutParams parms = new RelativeLayout.LayoutParams(140,140);
+                     imageE.setLayoutParams(parms);
+                 }
+                 else if(count >11 && count <=15)
+                 {
+                     RelativeLayout.LayoutParams parms = new RelativeLayout.LayoutParams(100,100);
+                     imageE.setLayoutParams(parms);
+                 }
+                 else if(count >15 && count <=19)
+                 {
+                     RelativeLayout.LayoutParams parms = new RelativeLayout.LayoutParams(70,70);
+                     imageE.setLayoutParams(parms);
+                 }
+                 else if (count>19)
+                 {
+                     Toast.makeText(SharpTest.this,"Badanie zakończone!",
+                             Toast.LENGTH_SHORT).show();
+                     Intent intent  = new Intent(SharpTest.this,MainView.class);
+                     startActivity(intent);
+                 }
              }
          });
 
@@ -131,16 +140,41 @@ public class SharpTest extends AppCompatActivity {
                  if (number==2) {
                      sum += 1;
                      count+=1;
-                     Toast.makeText(SharpTest.this,"2 - if",
-                             Toast.LENGTH_SHORT).show();
-                 } else {
+
+                 }
+                 else {
                      sum += 0;
                      count+=1;
-                     Toast.makeText(SharpTest.this,"2 - else",
-                             Toast.LENGTH_SHORT).show();
                  }
                  number=rnd.nextInt(3);
                  imageE.setImageResource(images[number]);
+
+                 if(count>3 && count <=7) {
+                     RelativeLayout.LayoutParams parms = new RelativeLayout.LayoutParams(180,180);
+                     imageE.setLayoutParams(parms);
+                 }
+                 else if(count >7 && count <=11)
+                 {
+                     RelativeLayout.LayoutParams parms = new RelativeLayout.LayoutParams(140,140);
+                     imageE.setLayoutParams(parms);
+                 }
+                 else if(count >11 && count <=15)
+                 {
+                     RelativeLayout.LayoutParams parms = new RelativeLayout.LayoutParams(100,100);
+                     imageE.setLayoutParams(parms);
+                 }
+                 else if(count >15 && count <=19)
+                 {
+                     RelativeLayout.LayoutParams parms = new RelativeLayout.LayoutParams(70,70);
+                     imageE.setLayoutParams(parms);
+                 }
+                 else if (count>19)
+                 {
+                     Toast.makeText(SharpTest.this,"Badanie zakończone!",
+                             Toast.LENGTH_SHORT).show();
+                     Intent intent  = new Intent(SharpTest.this,MainView.class);
+                     startActivity(intent);
+                 }
              }
          });
 
@@ -150,33 +184,41 @@ public class SharpTest extends AppCompatActivity {
                  if (number==3) {
                      sum += 1;
                      count+=1;
-                     Toast.makeText(SharpTest.this,"3 - if",
-                             Toast.LENGTH_SHORT).show();
                  }
                  else {
                      sum += 0;
                      count+=1;
-                     Toast.makeText(SharpTest.this,"3 - else",
-                             Toast.LENGTH_SHORT).show();
                  }
+                 number=rnd.nextInt(3);
+                 imageE.setImageResource(images[number]);
 
+                 if(count>3 && count <=7) {
+                     RelativeLayout.LayoutParams parms = new RelativeLayout.LayoutParams(180,180);
+                     imageE.setLayoutParams(parms);
+                 }
+                 else if(count >7 && count <=11)
+                 {
+                     RelativeLayout.LayoutParams parms = new RelativeLayout.LayoutParams(140,140);
+                     imageE.setLayoutParams(parms);
+                 }
+                 else if(count >11 && count <=15)
+                 {
+                     RelativeLayout.LayoutParams parms = new RelativeLayout.LayoutParams(100,100);
+                     imageE.setLayoutParams(parms);
+                 }
+                 else if(count >15 && count <=19)
+                 {
+                     RelativeLayout.LayoutParams parms = new RelativeLayout.LayoutParams(70,70);
+                     imageE.setLayoutParams(parms);
+                 }
+                 else if (count>19)
+                 {
+                     Toast.makeText(SharpTest.this,"Badanie zakończone!",
+                             Toast.LENGTH_SHORT).show();
+                     Intent intent  = new Intent(SharpTest.this,MainView.class);
+                     startActivity(intent);
+                 }
              }
          });
     }
-
-//    protected final static int getResourceID (final String resName, final String resType, final Context ctx)
-//    {
-//            final int ResourceID =
-//                    ctx.getResources().getIdentifier(resName, resType,
-//                            ctx.getApplicationInfo().packageName);
-//            if (ResourceID == 0) {
-//                throw new IllegalArgumentException
-//                        (
-//                                "No resource string found with name " + resName
-//                        );
-//            }
-//            else {
-//                return ResourceID;
-//            }
-//    }
 }
