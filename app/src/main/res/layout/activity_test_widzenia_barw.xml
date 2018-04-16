@@ -22,7 +22,7 @@
 
 
     <ImageView
-        android:id="@+id/imageE"
+        android:id="@+id/imageD"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_below="@+id/textView"
@@ -34,10 +34,10 @@
         android:id="@+id/numberPicker"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/imageE"
-        android:layout_below="@+id/imageE"
-        android:layout_marginStart="14dp"
-        android:layout_marginTop="49dp" />
+        android:layout_alignStart="@+id/imageD"
+        android:layout_below="@+id/imageD"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="14dp" />
 
     <NumberPicker
         android:id="@+id/numberPicker2"
@@ -45,5 +45,18 @@
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/numberPicker"
         android:layout_toEndOf="@+id/numberPicker" />
+
+    <Button
+        android:id="@+id/btn_ready"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/numberPicker"
+        android:layout_centerHorizontal="true"
+        android:text="Zatwierdź"
+        android:textColor="@android:color/white"
+        android:background="@color/colorPrimary"
+        />
+
+
 
 </RelativeLayout>
