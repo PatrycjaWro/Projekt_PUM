@@ -1,6 +1,8 @@
 package com.example.mirella.badaniewzroku;
 
 import android.content.Intent;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -48,6 +50,7 @@ public class TestWidzeniaBarw extends AppCompatActivity {
         btn_ready.setOnClickListener(new View.OnClickListener() {
 
 
+            @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void onClick(View view) {
 
@@ -55,7 +58,7 @@ public class TestWidzeniaBarw extends AppCompatActivity {
 
 
 
-                if (count>=0 && count <=8)
+                if (count>=0 && count <=9)
                 {
                     if (number_1==0 & value==3)
                     {
@@ -99,13 +102,21 @@ public class TestWidzeniaBarw extends AppCompatActivity {
                     }
                     textView2.setText(Integer.toString(sum));
 
-                    number_1=rnd.nextInt(9);
-                    imageD.setImageResource(images_1[number_1]);
-                    count+=1;
 
+                       number_1 = rnd.nextInt(9);
+                       imageD.setImageResource(images_1[number_1]);
+
+                        count += 1;
+
+                        if (count==9){
+                            imageD.setVisibility(View.INVISIBLE);
+                            numberPicker.setVisibility(View.INVISIBLE);
+                            btn_ready.setText("Gotowe!");
+                            count+=1;
+                        }
 
                 }
-                else if(count==9)
+                else
                 {
                     Toast.makeText(TestWidzeniaBarw.this,"Badanie zakończone!",
                             Toast.LENGTH_SHORT).show();
