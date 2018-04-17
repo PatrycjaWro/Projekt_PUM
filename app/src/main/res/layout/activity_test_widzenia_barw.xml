@@ -34,17 +34,10 @@
         android:id="@+id/numberPicker"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/imageD"
         android:layout_below="@+id/imageD"
         android:layout_marginStart="12dp"
-        android:layout_marginTop="14dp" />
-
-    <NumberPicker
-        android:id="@+id/numberPicker2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/numberPicker"
-        android:layout_toEndOf="@+id/numberPicker" />
+        android:layout_marginTop="14dp"
+        android:layout_centerHorizontal="true"/>
 
     <Button
         android:id="@+id/btn_ready"
@@ -57,6 +50,14 @@
         android:background="@color/colorPrimary"
         />
 
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/imageD"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="43dp"
+        android:text="TextView" />
 
 
 </RelativeLayout>
