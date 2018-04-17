@@ -45,13 +45,15 @@ public class SharpTest extends AppCompatActivity {
          btn_left.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View view) {
-                 if (number==0) {
-                     sum += 1;
-                     count+=1;
-                 }
-                 else {
-                     sum += 0;
-                     count+=1;
+                 switch (number) {
+                     case 0:
+                         sum += 1;
+                         count += 1;
+                         break;
+                     default:
+                         sum += 0;
+                         count += 1;
+                         break;
                  }
 
                  number=rnd.nextInt(3);
@@ -89,13 +91,15 @@ public class SharpTest extends AppCompatActivity {
          btn_up.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View view) {
-                 if (number==1) {
-                     sum += 1;
-                     count+=1;
-                 }
-                 else {
-                     sum += 0;
-                     count+=1;
+                 switch (number) {
+                     case 1:
+                         sum += 1;
+                         count += 1;
+                         break;
+                     default:
+                         sum += 0;
+                         count += 1;
+                         break;
                  }
 
                  number=rnd.nextInt(3);
@@ -133,14 +137,16 @@ public class SharpTest extends AppCompatActivity {
          btn_right.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View view) {
-                 if (number==2) {
-                     sum += 1;
-                     count+=1;
+                 switch (number) {
+                     case 2:
+                         sum += 1;
+                         count += 1;
 
-                 }
-                 else {
-                     sum += 0;
-                     count+=1;
+                         break;
+                     default:
+                         sum += 0;
+                         count += 1;
+                         break;
                  }
                  number=rnd.nextInt(3);
                  imageE.setImageResource(images[number]);
@@ -177,13 +183,15 @@ public class SharpTest extends AppCompatActivity {
          btn_down.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View view) {
-                 if (number==3) {
-                     sum += 1;
-                     count+=1;
-                 }
-                 else {
-                     sum += 0;
-                     count+=1;
+                 switch (number) {
+                     case 3:
+                         sum += 1;
+                         count += 1;
+                         break;
+                     default:
+                         sum += 0;
+                         count += 1;
+                         break;
                  }
                  number=rnd.nextInt(3);
                  imageE.setImageResource(images[number]);
