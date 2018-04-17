@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 import java.util.Random;
 
-public class TestWidzeniaBarw extends AppCompatActivity {
+public class DaltonismTest extends AppCompatActivity {
 
 
     protected Button btn_ready;
@@ -31,7 +31,7 @@ public class TestWidzeniaBarw extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_test_widzenia_barw);
+        setContentView(R.layout.activity_daltonism_test);
 
         btn_ready=(Button)findViewById(R.id.btn_ready);
         imageD=(ImageView)findViewById(R.id.imageD);
@@ -111,14 +111,14 @@ public class TestWidzeniaBarw extends AppCompatActivity {
                         if (count==10){
                             imageD.setVisibility(View.INVISIBLE);
                             numberPicker.setVisibility(View.INVISIBLE);
-                            Toast.makeText(TestWidzeniaBarw.this,"Badanie zakończone!",
+                            Toast.makeText(DaltonismTest.this,"Badanie zakończone!",
                                     Toast.LENGTH_SHORT).show();
-                            Intent intent  = new Intent(TestWidzeniaBarw.this,MainView.class);
+                            Intent intent  = new Intent(DaltonismTest.this,MainView.class);
                             startActivity(intent);
                         }
 
                 }
-               
+
 
 
 

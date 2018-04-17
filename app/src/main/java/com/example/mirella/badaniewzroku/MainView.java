@@ -42,7 +42,7 @@ public class MainView extends AppCompatActivity {
         testWidzenia_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainView.this, TestWidzeniaBarw.class);
+                Intent intent = new Intent(MainView.this, DaltonismTest.class);
                 startActivity(intent);
             }
         });
