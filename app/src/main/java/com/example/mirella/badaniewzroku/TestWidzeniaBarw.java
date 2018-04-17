@@ -38,8 +38,9 @@ public class TestWidzeniaBarw extends AppCompatActivity {
         numberPicker.setMinValue(0);
         textView2 = (TextView)findViewById(R.id.textView2);
 
-        final int [] images_1 = {R.drawable.i_96,R.drawable.i_42,R.drawable.i_35,R.drawable.i_5,R.drawable.i_18};
-        number_1=rnd.nextInt(4);
+        final int [] images_1 = {R.drawable.i_3,R.drawable.i_5,R.drawable.i_7,
+                R.drawable.i_9,R.drawable.i_18,R.drawable.i_29,R.drawable.i_35,R.drawable.i_42,R.drawable.i_74,R.drawable.i_96};
+        number_1=rnd.nextInt(9);
         imageD.setImageResource(images_1[number_1]);
 
 
@@ -52,18 +53,59 @@ public class TestWidzeniaBarw extends AppCompatActivity {
 
                 int value=numberPicker.getValue();
 
-                textView2.setText(Integer.toString(value));
 
 
-                if (count>=0 && count <=5)
+                if (count>=0 && count <=8)
                 {
-                    number_1=rnd.nextInt(4);
+                    if (number_1==0 & value==3)
+                    {
+                        sum+=1;
+                    }
+                    else if (number_1==1 & value==5)
+                    {
+                        sum+=1;
+                    }
+                    else if (number_1==2 & value==7)
+                    {
+                        sum+=1;
+                    }
+                    else if (number_1==3 & value==9)
+                    {
+                        sum+=1;
+                    }
+                    else if (number_1==4 & value==18)
+                    {
+                        sum+=1;
+                    }
+                    else if (number_1==5 & value==29)
+                    {
+                        sum+=1;
+                    }
+                    else if (number_1==6 & value==35)
+                    {
+                        sum+=1;
+                    }
+                    else if (number_1==7 & value==42)
+                    {
+                        sum+=1;
+                    }
+                    else if (number_1==8 & value==74)
+                    {
+                        sum+=1;
+                    }
+                    else if (number_1==9 & value==96)
+                    {
+                        sum+=1;
+                    }
+                    textView2.setText(Integer.toString(sum));
+
+                    number_1=rnd.nextInt(9);
                     imageD.setImageResource(images_1[number_1]);
                     count+=1;
 
 
                 }
-                else if(count==6)
+                else if(count==9)
                 {
                     Toast.makeText(TestWidzeniaBarw.this,"Badanie zakończone!",
                             Toast.LENGTH_SHORT).show();
