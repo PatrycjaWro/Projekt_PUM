@@ -25,14 +25,9 @@ public class GeneralTest extends AppCompatActivity {
         listView.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
         setContentView(listView);
 
-        btn_ready2=(Button)findViewById(R.id.btn_ready2);
 
-        btn_ready2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-               count=listView.getCheckedItemCount();
-            }
-        });
+        count=listView.getCheckedItemCount();
+
 
     }
 
