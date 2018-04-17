@@ -47,12 +47,12 @@ public class MainView extends AppCompatActivity {
             }
         });
 
-//            testOgolny_btn.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View view) {
-//                    Intent intent = new Intent(this, SharpTest.class);
-//                    startActivity(intent);
-//                }
-//            });
+        testOgolny_btn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                   Intent intent = new Intent(MainView.this, GeneralTest.class);
+                    startActivity(intent);
+                }
+        });
     }
 }
