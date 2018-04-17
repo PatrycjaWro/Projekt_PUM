@@ -19,7 +19,7 @@
         <activity android:name=".SharpTest" />
         <activity android:name=".MainView" />
         <activity android:name=".ContrastTest" />
-        <activity android:name=".TestWidzeniaBarw"></activity>
+        <activity android:name=".DaltonismTest"></activity>
     </application>
 
 </manifest>
