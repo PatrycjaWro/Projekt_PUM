@@ -190,21 +190,29 @@ public class SharpTest extends AppCompatActivity {
 
                  if(count>3 && count <=7) {
                      RelativeLayout.LayoutParams parms = new RelativeLayout.LayoutParams(180,180);
+                     parms.addRule(RelativeLayout.CENTER_HORIZONTAL);
+                     parms.addRule(RelativeLayout.CENTER_VERTICAL);
                      imageE.setLayoutParams(parms);
                  }
                  else if(count >7 && count <=11)
                  {
                      RelativeLayout.LayoutParams parms = new RelativeLayout.LayoutParams(140,140);
+                     parms.addRule(RelativeLayout.CENTER_HORIZONTAL);
+                     parms.addRule(RelativeLayout.CENTER_VERTICAL);
                      imageE.setLayoutParams(parms);
                  }
                  else if(count >11 && count <=15)
                  {
                      RelativeLayout.LayoutParams parms = new RelativeLayout.LayoutParams(100,100);
+                     parms.addRule(RelativeLayout.CENTER_HORIZONTAL);
+                     parms.addRule(RelativeLayout.CENTER_VERTICAL);
                      imageE.setLayoutParams(parms);
                  }
                  else if(count >15 && count <=19)
                  {
                      RelativeLayout.LayoutParams parms = new RelativeLayout.LayoutParams(70,70);
+                     parms.addRule(RelativeLayout.CENTER_HORIZONTAL);
+                     parms.addRule(RelativeLayout.CENTER_VERTICAL);
                      imageE.setLayoutParams(parms);
                  }
                  else if (count>19)
