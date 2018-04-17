@@ -46,48 +46,59 @@ public class ContrastTest extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(count>=0 && count <=3) {
-                    if (number_1 == 0) {
-                        sum += 1;
-                        count += 1;
-                    }
-                    else {
-                        sum += 0;
-                        count += 1;
+                    switch (number_1) {
+                        case 0:
+                            sum += 1;
+                            count += 1;
+                            break;
+                        default:
+                            sum += 0;
+                            count += 1;
+                            break;
                     }
                     number_1=rnd.nextInt(3);
                     imageC.setImageResource(images_1[number_1]);
                 }
                 if(count>3 && count <=7) {
-                    if (number_1 == 0) {
-                        sum += 1;
-                        count += 1;
-                    } else {
-                        sum += 0;
-                        count += 1;
+                    switch (number_1) {
+                        case 0:
+                            sum += 1;
+                            count += 1;
+                            break;
+                        default:
+                            sum += 0;
+                            count += 1;
+                            break;
                     }
                     number_1=rnd.nextInt(3);
                     imageC.setImageResource(images_2[number_1]);
                 }
                 else if(count >7 && count <=11)
                 {
-                    if (number_1 == 0) {
-                        sum += 1;
-                        count += 1;
-                    } else {
-                        sum += 0;
-                        count += 1;
+                    switch (number_1) {
+                        case 0:
+                            sum += 1;
+                            count += 1;
+                            break;
+                        default:
+                            sum += 0;
+                            count += 1;
+                            break;
                     }
                     number_1=rnd.nextInt(3);
                     imageC.setImageResource(images_3[number_1]);
                 }
                 else if(count >11 && count <=15)
                 {
-                    if (number_1 == 0) {
-                        sum += 1;
-                        count += 1;
-                    } else {
-                        sum += 0;
-                        count += 1;
+                    switch (number_1) {
+                        case 0:
+                            sum += 1;
+                            count += 1;
+                            break;
+                        default:
+                            sum += 0;
+                            count += 1;
+                            break;
                     }
                     number_1=rnd.nextInt(3);
                     imageC.setImageResource(images_4[number_1]);
@@ -106,47 +117,59 @@ public class ContrastTest extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(count>=0 && count <=3) {
-                    if (number_1 == 1) {
-                        sum += 1;
-                        count += 1;
-                    } else {
-                        sum += 0;
-                        count += 1;
+                    switch (number_1) {
+                        case 1:
+                            sum += 1;
+                            count += 1;
+                            break;
+                        default:
+                            sum += 0;
+                            count += 1;
+                            break;
                     }
                     number_1=rnd.nextInt(3);
                     imageC.setImageResource(images_1[number_1]);
                 }
                 if(count>3 && count <=7) {
-                    if (number_1 == 1) {
-                        sum += 1;
-                        count += 1;
-                    } else {
-                        sum += 0;
-                        count += 1;
+                    switch (number_1) {
+                        case 1:
+                            sum += 1;
+                            count += 1;
+                            break;
+                        default:
+                            sum += 0;
+                            count += 1;
+                            break;
                     }
                     number_1=rnd.nextInt(3);
                     imageC.setImageResource(images_2[number_1]);
                 }
                 else if(count >7 && count <=11)
                 {
-                    if (number_1 == 1) {
-                        sum += 1;
-                        count += 1;
-                    } else {
-                        sum += 0;
-                        count += 1;
+                    switch (number_1) {
+                        case 1:
+                            sum += 1;
+                            count += 1;
+                            break;
+                        default:
+                            sum += 0;
+                            count += 1;
+                            break;
                     }
                     number_1=rnd.nextInt(3);
                     imageC.setImageResource(images_3[number_1]);
                 }
                 else if(count >11 && count <=15)
                 {
-                    if (number_1 == 1) {
-                        sum += 1;
-                        count += 1;
-                    } else {
-                        sum += 0;
-                        count += 1;
+                    switch (number_1) {
+                        case 1:
+                            sum += 1;
+                            count += 1;
+                            break;
+                        default:
+                            sum += 0;
+                            count += 1;
+                            break;
                     }
                     number_1=rnd.nextInt(3);
                     imageC.setImageResource(images_4[number_1]);
@@ -165,47 +188,59 @@ public class ContrastTest extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(count>=0 && count <=3) {
-                    if (number_1 == 2) {
-                        sum += 1;
-                        count += 1;
-                    } else {
-                        sum += 0;
-                        count += 1;
+                    switch (number_1) {
+                        case 2:
+                            sum += 1;
+                            count += 1;
+                            break;
+                        default:
+                            sum += 0;
+                            count += 1;
+                            break;
                     }
                     number_1=rnd.nextInt(3);
                     imageC.setImageResource(images_1[number_1]);
                 }
                 if(count>3 && count <=7) {
-                    if (number_1 == 2) {
-                        sum += 1;
-                        count += 1;
-                    } else {
-                        sum += 0;
-                        count += 1;
+                    switch (number_1) {
+                        case 2:
+                            sum += 1;
+                            count += 1;
+                            break;
+                        default:
+                            sum += 0;
+                            count += 1;
+                            break;
                     }
                     number_1=rnd.nextInt(3);
                     imageC.setImageResource(images_2[number_1]);
                 }
                 else if(count >7 && count <=11)
                 {
-                    if (number_1 == 2) {
-                        sum += 1;
-                        count += 1;
-                    } else {
-                        sum += 0;
-                        count += 1;
+                    switch (number_1) {
+                        case 2:
+                            sum += 1;
+                            count += 1;
+                            break;
+                        default:
+                            sum += 0;
+                            count += 1;
+                            break;
                     }
                     number_1=rnd.nextInt(3);
                     imageC.setImageResource(images_3[number_1]);
                 }
                 else if(count >11 && count <=15)
                 {
-                    if (number_1 == 2) {
-                        sum += 1;
-                        count += 1;
-                    } else {
-                        sum += 0;
-                        count += 1;
+                    switch (number_1) {
+                        case 2:
+                            sum += 1;
+                            count += 1;
+                            break;
+                        default:
+                            sum += 0;
+                            count += 1;
+                            break;
                     }
                     number_1=rnd.nextInt(3);
                     imageC.setImageResource(images_4[number_1]);
@@ -224,47 +259,59 @@ public class ContrastTest extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(count>=0 && count <=3) {
-                    if (number_1 == 3) {
-                        sum += 1;
-                        count += 1;
-                    } else {
-                        sum += 0;
-                        count += 1;
+                    switch (number_1) {
+                        case 3:
+                            sum += 1;
+                            count += 1;
+                            break;
+                        default:
+                            sum += 0;
+                            count += 1;
+                            break;
                     }
                     number_1=rnd.nextInt(3);
                     imageC.setImageResource(images_1[number_1]);
                 }
                 if(count>3 && count <=7) {
-                    if (number_1 == 3) {
-                        sum += 1;
-                        count += 1;
-                    } else {
-                        sum += 0;
-                        count += 1;
+                    switch (number_1) {
+                        case 3:
+                            sum += 1;
+                            count += 1;
+                            break;
+                        default:
+                            sum += 0;
+                            count += 1;
+                            break;
                     }
                     number_1=rnd.nextInt(3);
                     imageC.setImageResource(images_2[number_1]);
                 }
                 else if(count >7 && count <=11)
                 {
-                    if (number_1 == 3) {
-                        sum += 1;
-                        count += 1;
-                    } else {
-                        sum += 0;
-                        count += 1;
+                    switch (number_1) {
+                        case 3:
+                            sum += 1;
+                            count += 1;
+                            break;
+                        default:
+                            sum += 0;
+                            count += 1;
+                            break;
                     }
                     number_1=rnd.nextInt(3);
                     imageC.setImageResource(images_3[number_1]);
                 }
                 else if(count >11 && count <=15)
                 {
-                    if (number_1 == 3) {
-                        sum += 1;
-                        count += 1;
-                    } else {
-                        sum += 0;
-                        count += 1;
+                    switch (number_1) {
+                        case 3:
+                            sum += 1;
+                            count += 1;
+                            break;
+                        default:
+                            sum += 0;
+                            count += 1;
+                            break;
                     }
                     number_1=rnd.nextInt(3);
                     imageC.setImageResource(images_4[number_1]);
