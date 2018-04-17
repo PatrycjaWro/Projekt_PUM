@@ -58,7 +58,7 @@ public class TestWidzeniaBarw extends AppCompatActivity {
 
 
 
-                if (count>=0 && count <=9)
+                if (count>=0 && count <=10)
                 {
                     if (number_1==0 & value==3)
                     {
@@ -108,21 +108,17 @@ public class TestWidzeniaBarw extends AppCompatActivity {
 
                         count += 1;
 
-                        if (count==9){
+                        if (count==10){
                             imageD.setVisibility(View.INVISIBLE);
                             numberPicker.setVisibility(View.INVISIBLE);
-                            btn_ready.setText("Gotowe!");
-                            count+=1;
+                            Toast.makeText(TestWidzeniaBarw.this,"Badanie zakończone!",
+                                    Toast.LENGTH_SHORT).show();
+                            Intent intent  = new Intent(TestWidzeniaBarw.this,MainView.class);
+                            startActivity(intent);
                         }
 
                 }
-                else
-                {
-                    Toast.makeText(TestWidzeniaBarw.this,"Badanie zakończone!",
-                            Toast.LENGTH_SHORT).show();
-                    Intent intent  = new Intent(TestWidzeniaBarw.this,MainView.class);
-                    startActivity(intent);
-                }
+               
 
 
 
