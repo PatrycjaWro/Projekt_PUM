@@ -1,6 +1,8 @@
 package com.example.mirella.badaniewzroku;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -26,8 +28,21 @@ public class MainView extends AppCompatActivity {
         SharpTest_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainView.this, SharpTest.class);
-                startActivity(intent);
+
+                AlertDialog alertDialog = new AlertDialog.Builder(MainView.this).create();
+                alertDialog.setTitle("Instrukcja");
+                alertDialog.setMessage("Trzymaj telefon przed sobą na wyciągnięcie ręki. Zaznacz strzałkę pokazującą kierunek zwrotu literki E");
+                alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "Rozumiem i przechodzę do badania.",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                                Intent intent = new Intent(MainView.this, SharpTest.class);
+                                startActivity(intent);
+                            }
+                        });
+                alertDialog.show();
+
+
             }
         });
 
@@ -48,11 +63,11 @@ public class MainView extends AppCompatActivity {
         });
 
         testOgolny_btn.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                   Intent intent = new Intent(MainView.this, GeneralTest.class);
-                    startActivity(intent);
-                }
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainView.this, GeneralTest.class);
+                startActivity(intent);
+            }
         });
     }
 }
