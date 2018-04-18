@@ -3,6 +3,7 @@ package com.example.mirella.badaniewzroku;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -25,13 +26,17 @@ public class MainActivity extends AppCompatActivity {
         surname = (EditText) findViewById(R.id.surname);
         age = (EditText) findViewById(R.id.age);
 
+        final String user_name = name.getText().toString();
+        final String user_surname = surname.getText().toString();
+        final String user_age = age.getText().toString();
+
         btn_ready.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (name.getText() == null && surname.getText() == null && age.getText() == null) {
-                    name.setText("Wpisz swoje imię!");
-                    surname.setText("Wpisz swoje nazwisko!");
-                    age.setText("Wpisz swój wiek!");
+                if (TextUtils.isEmpty(user_name) || TextUtils.isEmpty(user_surname) || TextUtils.isEmpty(user_age) ) {
+                    name.setHint("Wpisz swoje imię!");
+                    surname.setHint("Wpisz swoje nazwisko!");
+                    age.setHint("Wpisz swój wiek!");
                 }
                 else {
                     Intent intent = new Intent(MainActivity.this, MainView.class);
