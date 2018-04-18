@@ -14,8 +14,8 @@
         android:layout_marginBottom="50dp"
         android:layout_weight="1"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="Imię:" />
+        android:hint="Imię:"
+        android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/surname"
@@ -24,8 +24,8 @@
         android:layout_marginBottom="50dp"
         android:layout_weight="1"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="Nazwisko:" />
+        android:hint="Nazwisko:"
+        android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/age"
@@ -34,8 +34,8 @@
         android:layout_marginBottom="50dp"
         android:layout_weight="1"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="Wiek" />
+        android:hint="Wiek"
+        android:inputType="textPersonName" />
 
     <Button
         android:id="@+id/btn_ready"

@@ -22,8 +22,8 @@ public class SharpTest extends AppCompatActivity {
     protected ImageButton btn_right;
     protected ImageView imageE;
     final Random rnd = new Random();
-    int sum=0;
-    int count=0;
+    int sum = 0;
+    int count = 0;
     int number;
 
     @Override
@@ -38,223 +38,191 @@ public class SharpTest extends AppCompatActivity {
         imageE = (ImageView) findViewById(R.id.imageE);
 
 
-        final int [] images = {R.drawable.e_0,R.drawable.e_1,R.drawable.e_2,R.drawable.e_3};
-        number=rnd.nextInt(4);
+        final int[] images = {R.drawable.e_0, R.drawable.e_1, R.drawable.e_2, R.drawable.e_3};
+        number = rnd.nextInt(4);
         imageE.setImageResource(images[number]);
 
-         btn_left.setOnClickListener(new View.OnClickListener() {
-             @Override
-             public void onClick(View view) {
-                 switch (number) {
-                     case 0:
-                         sum += 1;
-                         count += 1;
-                         break;
-                     default:
-                         sum += 0;
-                         count += 1;
-                         break;
-                 }
+        btn_left.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                switch (number) {
+                    case 0:
+                        sum += 1;
+                        count += 1;
+                        break;
+                    default:
+                        sum += 0;
+                        count += 1;
+                        break;
+                }
 
-                 number=rnd.nextInt(4);
-                 imageE.setImageResource(images[number]);
+                number = rnd.nextInt(4);
+                imageE.setImageResource(images[number]);
 
-                 if(count>3 && count <=7) {
-                    RelativeLayout.LayoutParams parms = new RelativeLayout.LayoutParams(180,180);
-                     parms.addRule(RelativeLayout.CENTER_HORIZONTAL);
-                     parms.addRule(RelativeLayout.CENTER_VERTICAL);
+                if (count > 3 && count <= 7) {
+                    RelativeLayout.LayoutParams parms = new RelativeLayout.LayoutParams(180, 180);
+                    parms.addRule(RelativeLayout.CENTER_HORIZONTAL);
+                    parms.addRule(RelativeLayout.CENTER_VERTICAL);
                     imageE.setLayoutParams(parms);
-                 }
-                 else if(count >7 && count <=11)
-                 {
-                     RelativeLayout.LayoutParams parms = new RelativeLayout.LayoutParams(140,140);
-                     parms.addRule(RelativeLayout.CENTER_HORIZONTAL);
-                     parms.addRule(RelativeLayout.CENTER_VERTICAL);
-                     imageE.setLayoutParams(parms);
-                 }
-                 else if(count >11 && count <=15)
-                 {
-                     RelativeLayout.LayoutParams parms = new RelativeLayout.LayoutParams(100,100);
-                     parms.addRule(RelativeLayout.CENTER_HORIZONTAL);
-                     parms.addRule(RelativeLayout.CENTER_VERTICAL);
-                     imageE.setLayoutParams(parms);
-                 }
-                 else if(count >15 && count <=19)
-                 {
-                     RelativeLayout.LayoutParams parms = new RelativeLayout.LayoutParams(70,70);
-                     parms.addRule(RelativeLayout.CENTER_HORIZONTAL);
-                     parms.addRule(RelativeLayout.CENTER_VERTICAL);
-                     imageE.setLayoutParams(parms);
-                 }
-                 else if (count>19)
-                 {
-                     Toast.makeText(SharpTest.this,"Badanie zakończone!",
-                             Toast.LENGTH_SHORT).show();
-                     Intent intent  = new Intent(SharpTest.this,MainView.class);
-                     startActivity(intent);
-                 }
-             }
-         });
+                } else if (count > 7 && count <= 11) {
+                    RelativeLayout.LayoutParams parms = new RelativeLayout.LayoutParams(140, 140);
+                    parms.addRule(RelativeLayout.CENTER_HORIZONTAL);
+                    parms.addRule(RelativeLayout.CENTER_VERTICAL);
+                    imageE.setLayoutParams(parms);
+                } else if (count > 11 && count <= 15) {
+                    RelativeLayout.LayoutParams parms = new RelativeLayout.LayoutParams(100, 100);
+                    parms.addRule(RelativeLayout.CENTER_HORIZONTAL);
+                    parms.addRule(RelativeLayout.CENTER_VERTICAL);
+                    imageE.setLayoutParams(parms);
+                } else if (count > 15 && count <= 19) {
+                    RelativeLayout.LayoutParams parms = new RelativeLayout.LayoutParams(70, 70);
+                    parms.addRule(RelativeLayout.CENTER_HORIZONTAL);
+                    parms.addRule(RelativeLayout.CENTER_VERTICAL);
+                    imageE.setLayoutParams(parms);
+                } else if (count > 19) {
+                    Toast.makeText(SharpTest.this, "Badanie zakończone!",
+                            Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(SharpTest.this, MainView.class);
+                    startActivity(intent);
+                }
+            }
+        });
 
-         btn_up.setOnClickListener(new View.OnClickListener() {
-             @Override
-             public void onClick(View view) {
-                 switch (number) {
-                     case 1:
-                         sum += 1;
-                         count += 1;
-                         break;
-                     default:
-                         sum += 0;
-                         count += 1;
-                         break;
-                 }
+        btn_up.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                switch (number) {
+                    case 1:
+                        sum += 1;
+                        count += 1;
+                        break;
+                    default:
+                        sum += 0;
+                        count += 1;
+                        break;
+                }
 
-                 number=rnd.nextInt(4);
-                 imageE.setImageResource(images[number]);
+                number = rnd.nextInt(4);
+                imageE.setImageResource(images[number]);
 
-                 if(count>3 && count <=7) {
-                     RelativeLayout.LayoutParams parms = new RelativeLayout.LayoutParams(180,180);
-                     parms.addRule(RelativeLayout.CENTER_HORIZONTAL);
-                     parms.addRule(RelativeLayout.CENTER_VERTICAL);
-                     imageE.setLayoutParams(parms);
-                 }
-                 else if(count >7 && count <=11)
-                 {
-                     RelativeLayout.LayoutParams parms = new RelativeLayout.LayoutParams(140,140);
-                     parms.addRule(RelativeLayout.CENTER_HORIZONTAL);
-                     parms.addRule(RelativeLayout.CENTER_VERTICAL);
-                     imageE.setLayoutParams(parms);
-                 }
-                 else if(count >11 && count <=15)
-                 {
-                     RelativeLayout.LayoutParams parms = new RelativeLayout.LayoutParams(100,100);
-                     parms.addRule(RelativeLayout.CENTER_HORIZONTAL);
-                     parms.addRule(RelativeLayout.CENTER_VERTICAL);
-                     imageE.setLayoutParams(parms);
-                 }
-                 else if(count >15 && count <=19)
-                 {
-                     RelativeLayout.LayoutParams parms = new RelativeLayout.LayoutParams(70,70);
-                     parms.addRule(RelativeLayout.CENTER_HORIZONTAL);
-                     parms.addRule(RelativeLayout.CENTER_VERTICAL);
-                     imageE.setLayoutParams(parms);
-                 }
-                 else if (count>19)
-                 {
-                     Toast.makeText(SharpTest.this,"Badanie zakończone!",
-                             Toast.LENGTH_SHORT).show();
-                     Intent intent  = new Intent(SharpTest.this,MainView.class);
-                     startActivity(intent);
-                 }
-             }
-         });
+                if (count > 3 && count <= 7) {
+                    RelativeLayout.LayoutParams parms = new RelativeLayout.LayoutParams(180, 180);
+                    parms.addRule(RelativeLayout.CENTER_HORIZONTAL);
+                    parms.addRule(RelativeLayout.CENTER_VERTICAL);
+                    imageE.setLayoutParams(parms);
+                } else if (count > 7 && count <= 11) {
+                    RelativeLayout.LayoutParams parms = new RelativeLayout.LayoutParams(140, 140);
+                    parms.addRule(RelativeLayout.CENTER_HORIZONTAL);
+                    parms.addRule(RelativeLayout.CENTER_VERTICAL);
+                    imageE.setLayoutParams(parms);
+                } else if (count > 11 && count <= 15) {
+                    RelativeLayout.LayoutParams parms = new RelativeLayout.LayoutParams(100, 100);
+                    parms.addRule(RelativeLayout.CENTER_HORIZONTAL);
+                    parms.addRule(RelativeLayout.CENTER_VERTICAL);
+                    imageE.setLayoutParams(parms);
+                } else if (count > 15 && count <= 19) {
+                    RelativeLayout.LayoutParams parms = new RelativeLayout.LayoutParams(70, 70);
+                    parms.addRule(RelativeLayout.CENTER_HORIZONTAL);
+                    parms.addRule(RelativeLayout.CENTER_VERTICAL);
+                    imageE.setLayoutParams(parms);
+                } else if (count > 19) {
+                    Toast.makeText(SharpTest.this, "Badanie zakończone!",
+                            Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(SharpTest.this, MainView.class);
+                    startActivity(intent);
+                }
+            }
+        });
 
-         btn_right.setOnClickListener(new View.OnClickListener() {
-             @Override
-             public void onClick(View view) {
-                 switch (number) {
-                     case 2:
-                         sum += 1;
-                         count += 1;
+        btn_right.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                switch (number) {
+                    case 2:
+                        sum += 1;
+                        count += 1;
 
-                         break;
-                     default:
-                         sum += 0;
-                         count += 1;
-                         break;
-                 }
-                 number=rnd.nextInt(4);
-                 imageE.setImageResource(images[number]);
+                        break;
+                    default:
+                        sum += 0;
+                        count += 1;
+                        break;
+                }
+                number = rnd.nextInt(4);
+                imageE.setImageResource(images[number]);
 
-                 if(count>3 && count <=7) {
-                     RelativeLayout.LayoutParams parms = new RelativeLayout.LayoutParams(180,180);
-                     parms.addRule(RelativeLayout.CENTER_HORIZONTAL);
-                     parms.addRule(RelativeLayout.CENTER_VERTICAL);
-                     imageE.setLayoutParams(parms);
-                 }
-                 else if(count >7 && count <=11)
-                 {
-                     RelativeLayout.LayoutParams parms = new RelativeLayout.LayoutParams(140,140);
-                     parms.addRule(RelativeLayout.CENTER_HORIZONTAL);
-                     parms.addRule(RelativeLayout.CENTER_VERTICAL);
-                     imageE.setLayoutParams(parms);
-                 }
-                 else if(count >11 && count <=15)
-                 {
-                     RelativeLayout.LayoutParams parms = new RelativeLayout.LayoutParams(100,100);
-                     parms.addRule(RelativeLayout.CENTER_HORIZONTAL);
-                     parms.addRule(RelativeLayout.CENTER_VERTICAL);
-                     imageE.setLayoutParams(parms);
-                 }
-                 else if(count >15 && count <=19)
-                 {
-                     RelativeLayout.LayoutParams parms = new RelativeLayout.LayoutParams(70,70);
-                     parms.addRule(RelativeLayout.CENTER_HORIZONTAL);
-                     parms.addRule(RelativeLayout.CENTER_VERTICAL);
-                     imageE.setLayoutParams(parms);
-                 }
-                 else if (count>19)
-                 {
-                     Toast.makeText(SharpTest.this,"Badanie zakończone!",
-                             Toast.LENGTH_SHORT).show();
-                     Intent intent  = new Intent(SharpTest.this,MainView.class);
-                     startActivity(intent);
-                 }
-             }
-         });
+                if (count > 3 && count <= 7) {
+                    RelativeLayout.LayoutParams parms = new RelativeLayout.LayoutParams(180, 180);
+                    parms.addRule(RelativeLayout.CENTER_HORIZONTAL);
+                    parms.addRule(RelativeLayout.CENTER_VERTICAL);
+                    imageE.setLayoutParams(parms);
+                } else if (count > 7 && count <= 11) {
+                    RelativeLayout.LayoutParams parms = new RelativeLayout.LayoutParams(140, 140);
+                    parms.addRule(RelativeLayout.CENTER_HORIZONTAL);
+                    parms.addRule(RelativeLayout.CENTER_VERTICAL);
+                    imageE.setLayoutParams(parms);
+                } else if (count > 11 && count <= 15) {
+                    RelativeLayout.LayoutParams parms = new RelativeLayout.LayoutParams(100, 100);
+                    parms.addRule(RelativeLayout.CENTER_HORIZONTAL);
+                    parms.addRule(RelativeLayout.CENTER_VERTICAL);
+                    imageE.setLayoutParams(parms);
+                } else if (count > 15 && count <= 19) {
+                    RelativeLayout.LayoutParams parms = new RelativeLayout.LayoutParams(70, 70);
+                    parms.addRule(RelativeLayout.CENTER_HORIZONTAL);
+                    parms.addRule(RelativeLayout.CENTER_VERTICAL);
+                    imageE.setLayoutParams(parms);
+                } else if (count > 19) {
+                    Toast.makeText(SharpTest.this, "Badanie zakończone!",
+                            Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(SharpTest.this, MainView.class);
+                    startActivity(intent);
+                }
+            }
+        });
 
-         btn_down.setOnClickListener(new View.OnClickListener() {
-             @Override
-             public void onClick(View view) {
-                 switch (number) {
-                     case 3:
-                         sum += 1;
-                         count += 1;
-                         break;
-                     default:
-                         sum += 0;
-                         count += 1;
-                         break;
-                 }
-                 number=rnd.nextInt(4);
-                 imageE.setImageResource(images[number]);
+        btn_down.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                switch (number) {
+                    case 3:
+                        sum += 1;
+                        count += 1;
+                        break;
+                    default:
+                        sum += 0;
+                        count += 1;
+                        break;
+                }
+                number = rnd.nextInt(4);
+                imageE.setImageResource(images[number]);
 
-                 if(count>3 && count <=7) {
-                     RelativeLayout.LayoutParams parms = new RelativeLayout.LayoutParams(180,180);
-                     parms.addRule(RelativeLayout.CENTER_HORIZONTAL);
-                     parms.addRule(RelativeLayout.CENTER_VERTICAL);
-                     imageE.setLayoutParams(parms);
-                 }
-                 else if(count >7 && count <=11)
-                 {
-                     RelativeLayout.LayoutParams parms = new RelativeLayout.LayoutParams(140,140);
-                     parms.addRule(RelativeLayout.CENTER_HORIZONTAL);
-                     parms.addRule(RelativeLayout.CENTER_VERTICAL);
-                     imageE.setLayoutParams(parms);
-                 }
-                 else if(count >11 && count <=15)
-                 {
-                     RelativeLayout.LayoutParams parms = new RelativeLayout.LayoutParams(100,100);
-                     parms.addRule(RelativeLayout.CENTER_HORIZONTAL);
-                     parms.addRule(RelativeLayout.CENTER_VERTICAL);
-                     imageE.setLayoutParams(parms);
-                 }
-                 else if(count >15 && count <=19)
-                 {
-                     RelativeLayout.LayoutParams parms = new RelativeLayout.LayoutParams(70,70);
-                     parms.addRule(RelativeLayout.CENTER_HORIZONTAL);
-                     parms.addRule(RelativeLayout.CENTER_VERTICAL);
-                     imageE.setLayoutParams(parms);
-                 }
-                 else if (count>19)
-                 {
-                     Toast.makeText(SharpTest.this,"Badanie zakończone!",
-                             Toast.LENGTH_SHORT).show();
-                     Intent intent  = new Intent(SharpTest.this,MainView.class);
-                     startActivity(intent);
-                 }
-             }
-         });
+                if (count > 3 && count <= 7) {
+                    RelativeLayout.LayoutParams parms = new RelativeLayout.LayoutParams(180, 180);
+                    parms.addRule(RelativeLayout.CENTER_HORIZONTAL);
+                    parms.addRule(RelativeLayout.CENTER_VERTICAL);
+                    imageE.setLayoutParams(parms);
+                } else if (count > 7 && count <= 11) {
+                    RelativeLayout.LayoutParams parms = new RelativeLayout.LayoutParams(140, 140);
+                    parms.addRule(RelativeLayout.CENTER_HORIZONTAL);
+                    parms.addRule(RelativeLayout.CENTER_VERTICAL);
+                    imageE.setLayoutParams(parms);
+                } else if (count > 11 && count <= 15) {
+                    RelativeLayout.LayoutParams parms = new RelativeLayout.LayoutParams(100, 100);
+                    parms.addRule(RelativeLayout.CENTER_HORIZONTAL);
+                    parms.addRule(RelativeLayout.CENTER_VERTICAL);
+                    imageE.setLayoutParams(parms);
+                } else if (count > 15 && count <= 19) {
+                    RelativeLayout.LayoutParams parms = new RelativeLayout.LayoutParams(70, 70);
+                    parms.addRule(RelativeLayout.CENTER_HORIZONTAL);
+                    parms.addRule(RelativeLayout.CENTER_VERTICAL);
+                    imageE.setLayoutParams(parms);
+                } else if (count > 19) {
+                    Toast.makeText(SharpTest.this, "Badanie zakończone!",
+                            Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(SharpTest.this, MainView.class);
+                    startActivity(intent);
+                }
+            }
+        });
     }
 }
