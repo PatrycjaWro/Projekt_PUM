@@ -35,7 +35,7 @@ public class ContrastTest extends AppCompatActivity {
         imageC = (ImageView) findViewById(R.id.imageC);
 
         final int [] images_1 = {R.drawable.c_0,R.drawable.c_1,R.drawable.c_2,R.drawable.c_3};
-        number_1=rnd.nextInt(3);
+        number_1=rnd.nextInt(4);
         imageC.setImageResource(images_1[number_1]);
 
         final int [] images_2 = {R.drawable.c_01,R.drawable.c_11,R.drawable.c_21,R.drawable.c_31};
@@ -56,7 +56,7 @@ public class ContrastTest extends AppCompatActivity {
                             count += 1;
                             break;
                     }
-                    number_1=rnd.nextInt(3);
+                    number_1=rnd.nextInt(4);
                     imageC.setImageResource(images_1[number_1]);
                 }
                 if(count>3 && count <=7) {
@@ -70,7 +70,7 @@ public class ContrastTest extends AppCompatActivity {
                             count += 1;
                             break;
                     }
-                    number_1=rnd.nextInt(3);
+                    number_1=rnd.nextInt(4);
                     imageC.setImageResource(images_2[number_1]);
                 }
                 else if(count >7 && count <=11)
@@ -85,7 +85,7 @@ public class ContrastTest extends AppCompatActivity {
                             count += 1;
                             break;
                     }
-                    number_1=rnd.nextInt(3);
+                    number_1=rnd.nextInt(4);
                     imageC.setImageResource(images_3[number_1]);
                 }
                 else if(count >11 && count <=15)
@@ -100,7 +100,7 @@ public class ContrastTest extends AppCompatActivity {
                             count += 1;
                             break;
                     }
-                    number_1=rnd.nextInt(3);
+                    number_1=rnd.nextInt(4);
                     imageC.setImageResource(images_4[number_1]);
                 }
                 else if(count >15)
@@ -127,7 +127,7 @@ public class ContrastTest extends AppCompatActivity {
                             count += 1;
                             break;
                     }
-                    number_1=rnd.nextInt(3);
+                    number_1=rnd.nextInt(4);
                     imageC.setImageResource(images_1[number_1]);
                 }
                 if(count>3 && count <=7) {
@@ -141,7 +141,7 @@ public class ContrastTest extends AppCompatActivity {
                             count += 1;
                             break;
                     }
-                    number_1=rnd.nextInt(3);
+                    number_1=rnd.nextInt(4);
                     imageC.setImageResource(images_2[number_1]);
                 }
                 else if(count >7 && count <=11)
@@ -156,7 +156,7 @@ public class ContrastTest extends AppCompatActivity {
                             count += 1;
                             break;
                     }
-                    number_1=rnd.nextInt(3);
+                    number_1=rnd.nextInt(4);
                     imageC.setImageResource(images_3[number_1]);
                 }
                 else if(count >11 && count <=15)
@@ -171,7 +171,7 @@ public class ContrastTest extends AppCompatActivity {
                             count += 1;
                             break;
                     }
-                    number_1=rnd.nextInt(3);
+                    number_1=rnd.nextInt(4);
                     imageC.setImageResource(images_4[number_1]);
                 }
                 else if(count >15)
@@ -198,7 +198,7 @@ public class ContrastTest extends AppCompatActivity {
                             count += 1;
                             break;
                     }
-                    number_1=rnd.nextInt(3);
+                    number_1=rnd.nextInt(4);
                     imageC.setImageResource(images_1[number_1]);
                 }
                 if(count>3 && count <=7) {
@@ -212,7 +212,7 @@ public class ContrastTest extends AppCompatActivity {
                             count += 1;
                             break;
                     }
-                    number_1=rnd.nextInt(3);
+                    number_1=rnd.nextInt(4);
                     imageC.setImageResource(images_2[number_1]);
                 }
                 else if(count >7 && count <=11)
@@ -227,7 +227,7 @@ public class ContrastTest extends AppCompatActivity {
                             count += 1;
                             break;
                     }
-                    number_1=rnd.nextInt(3);
+                    number_1=rnd.nextInt(4);
                     imageC.setImageResource(images_3[number_1]);
                 }
                 else if(count >11 && count <=15)
@@ -242,7 +242,7 @@ public class ContrastTest extends AppCompatActivity {
                             count += 1;
                             break;
                     }
-                    number_1=rnd.nextInt(3);
+                    number_1=rnd.nextInt(4);
                     imageC.setImageResource(images_4[number_1]);
                 }
                 else if(count >15)
@@ -269,7 +269,7 @@ public class ContrastTest extends AppCompatActivity {
                             count += 1;
                             break;
                     }
-                    number_1=rnd.nextInt(3);
+                    number_1=rnd.nextInt(4);
                     imageC.setImageResource(images_1[number_1]);
                 }
                 if(count>3 && count <=7) {
@@ -283,7 +283,7 @@ public class ContrastTest extends AppCompatActivity {
                             count += 1;
                             break;
                     }
-                    number_1=rnd.nextInt(3);
+                    number_1=rnd.nextInt(4);
                     imageC.setImageResource(images_2[number_1]);
                 }
                 else if(count >7 && count <=11)
@@ -298,7 +298,7 @@ public class ContrastTest extends AppCompatActivity {
                             count += 1;
                             break;
                     }
-                    number_1=rnd.nextInt(3);
+                    number_1=rnd.nextInt(4);
                     imageC.setImageResource(images_3[number_1]);
                 }
                 else if(count >11 && count <=15)
@@ -313,7 +313,7 @@ public class ContrastTest extends AppCompatActivity {
                             count += 1;
                             break;
                     }
-                    number_1=rnd.nextInt(3);
+                    number_1=rnd.nextInt(4);
                     imageC.setImageResource(images_4[number_1]);
                 }
                 else if(count >15)

@@ -39,7 +39,7 @@ public class SharpTest extends AppCompatActivity {
 
 
         final int [] images = {R.drawable.e_0,R.drawable.e_1,R.drawable.e_2,R.drawable.e_3};
-        number=rnd.nextInt(3);
+        number=rnd.nextInt(4);
         imageE.setImageResource(images[number]);
 
          btn_left.setOnClickListener(new View.OnClickListener() {
@@ -56,26 +56,34 @@ public class SharpTest extends AppCompatActivity {
                          break;
                  }
 
-                 number=rnd.nextInt(3);
+                 number=rnd.nextInt(4);
                  imageE.setImageResource(images[number]);
 
                  if(count>3 && count <=7) {
                     RelativeLayout.LayoutParams parms = new RelativeLayout.LayoutParams(180,180);
+                     parms.addRule(RelativeLayout.CENTER_HORIZONTAL);
+                     parms.addRule(RelativeLayout.CENTER_VERTICAL);
                     imageE.setLayoutParams(parms);
                  }
                  else if(count >7 && count <=11)
                  {
                      RelativeLayout.LayoutParams parms = new RelativeLayout.LayoutParams(140,140);
+                     parms.addRule(RelativeLayout.CENTER_HORIZONTAL);
+                     parms.addRule(RelativeLayout.CENTER_VERTICAL);
                      imageE.setLayoutParams(parms);
                  }
                  else if(count >11 && count <=15)
                  {
                      RelativeLayout.LayoutParams parms = new RelativeLayout.LayoutParams(100,100);
+                     parms.addRule(RelativeLayout.CENTER_HORIZONTAL);
+                     parms.addRule(RelativeLayout.CENTER_VERTICAL);
                      imageE.setLayoutParams(parms);
                  }
                  else if(count >15 && count <=19)
                  {
                      RelativeLayout.LayoutParams parms = new RelativeLayout.LayoutParams(70,70);
+                     parms.addRule(RelativeLayout.CENTER_HORIZONTAL);
+                     parms.addRule(RelativeLayout.CENTER_VERTICAL);
                      imageE.setLayoutParams(parms);
                  }
                  else if (count>19)
@@ -102,26 +110,34 @@ public class SharpTest extends AppCompatActivity {
                          break;
                  }
 
-                 number=rnd.nextInt(3);
+                 number=rnd.nextInt(4);
                  imageE.setImageResource(images[number]);
 
                  if(count>3 && count <=7) {
                      RelativeLayout.LayoutParams parms = new RelativeLayout.LayoutParams(180,180);
+                     parms.addRule(RelativeLayout.CENTER_HORIZONTAL);
+                     parms.addRule(RelativeLayout.CENTER_VERTICAL);
                      imageE.setLayoutParams(parms);
                  }
                  else if(count >7 && count <=11)
                  {
                      RelativeLayout.LayoutParams parms = new RelativeLayout.LayoutParams(140,140);
+                     parms.addRule(RelativeLayout.CENTER_HORIZONTAL);
+                     parms.addRule(RelativeLayout.CENTER_VERTICAL);
                      imageE.setLayoutParams(parms);
                  }
                  else if(count >11 && count <=15)
                  {
                      RelativeLayout.LayoutParams parms = new RelativeLayout.LayoutParams(100,100);
+                     parms.addRule(RelativeLayout.CENTER_HORIZONTAL);
+                     parms.addRule(RelativeLayout.CENTER_VERTICAL);
                      imageE.setLayoutParams(parms);
                  }
                  else if(count >15 && count <=19)
                  {
                      RelativeLayout.LayoutParams parms = new RelativeLayout.LayoutParams(70,70);
+                     parms.addRule(RelativeLayout.CENTER_HORIZONTAL);
+                     parms.addRule(RelativeLayout.CENTER_VERTICAL);
                      imageE.setLayoutParams(parms);
                  }
                  else if (count>19)
@@ -148,26 +164,34 @@ public class SharpTest extends AppCompatActivity {
                          count += 1;
                          break;
                  }
-                 number=rnd.nextInt(3);
+                 number=rnd.nextInt(4);
                  imageE.setImageResource(images[number]);
 
                  if(count>3 && count <=7) {
                      RelativeLayout.LayoutParams parms = new RelativeLayout.LayoutParams(180,180);
+                     parms.addRule(RelativeLayout.CENTER_HORIZONTAL);
+                     parms.addRule(RelativeLayout.CENTER_VERTICAL);
                      imageE.setLayoutParams(parms);
                  }
                  else if(count >7 && count <=11)
                  {
                      RelativeLayout.LayoutParams parms = new RelativeLayout.LayoutParams(140,140);
+                     parms.addRule(RelativeLayout.CENTER_HORIZONTAL);
+                     parms.addRule(RelativeLayout.CENTER_VERTICAL);
                      imageE.setLayoutParams(parms);
                  }
                  else if(count >11 && count <=15)
                  {
                      RelativeLayout.LayoutParams parms = new RelativeLayout.LayoutParams(100,100);
+                     parms.addRule(RelativeLayout.CENTER_HORIZONTAL);
+                     parms.addRule(RelativeLayout.CENTER_VERTICAL);
                      imageE.setLayoutParams(parms);
                  }
                  else if(count >15 && count <=19)
                  {
                      RelativeLayout.LayoutParams parms = new RelativeLayout.LayoutParams(70,70);
+                     parms.addRule(RelativeLayout.CENTER_HORIZONTAL);
+                     parms.addRule(RelativeLayout.CENTER_VERTICAL);
                      imageE.setLayoutParams(parms);
                  }
                  else if (count>19)
@@ -193,7 +217,7 @@ public class SharpTest extends AppCompatActivity {
                          count += 1;
                          break;
                  }
-                 number=rnd.nextInt(3);
+                 number=rnd.nextInt(4);
                  imageE.setImageResource(images[number]);
 
                  if(count>3 && count <=7) {
