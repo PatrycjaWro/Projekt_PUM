@@ -17,6 +17,7 @@ public class GeneralTest extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        listView = (ListView) findViewById(R.id.listView);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_general_test);
 
@@ -24,7 +25,7 @@ public class GeneralTest extends AppCompatActivity {
         listView.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_multiple_choice, data));
         listView.setItemsCanFocus(true);
         listView.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
-        setContentView(listView);
+
 
 
         count = listView.getCheckedItemCount();
