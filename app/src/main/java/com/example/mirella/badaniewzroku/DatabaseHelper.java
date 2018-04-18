@@ -1,33 +1,47 @@
 package com.example.mirella.badaniewzroku;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-
-import static com.example.mirella.badaniewzroku.DataBase.DB_CREATE_DATA_TABLE;
-import static com.example.mirella.badaniewzroku.DataBase.DROP_DATA_TABLE;
 
 /**
  * Created by Mirella on 18.04.2018.
  */
 
 public class DatabaseHelper extends SQLiteOpenHelper {
-    public DatabaseHelper(Context context, String name,
-                          SQLiteDatabase.CursorFactory factory, int version) {
-        super(context, name, factory, version);
+
+    public DatabaseHelper(Context context) {
+        super(context, "database.db", null, 1);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL(DB_CREATE_DATA_TABLE);
+        db.execSQL("create table Badania_Okulistyczne (" +
+                "id integer primary key autoincrement," +
+                "imie text," +
+                "nazwisko text," +
+                "wiek integer," +
+                "data data," +
+                "test_ostrosci integer," +
+                "test_kontrastu integer," +
+                "test_daltonizmu integer," +
+                "test_ogolny integer);" +
+                "");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL(DROP_DATA_TABLE);
-        onCreate(db);
     }
 
 
+    public long insert(String dbDataTable, Object o, ContentValues newDataValues) {
+    }
+
+    public int delete(String dbDataTable, String where, Object o) {
+    }
+
+    public int update(String dbDataTable, ContentValues updateTodoValues, String where, Object o) {
+    }
 }
 
