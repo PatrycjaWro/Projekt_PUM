@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.mirella.badaniewzroku.DaltonismTest"
-    android:layout_margin="15dp"
+    android:layout_margin="20dp"
 
     >
 
@@ -17,7 +17,7 @@
         android:layout_gravity="center"
         android:text="Test ostrości wzroku"
         android:textAlignment="center"
-        android:textSize="20dp"
+        android:textSize="30dp"
         android:id="@+id/textView" />
 
 
