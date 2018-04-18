@@ -8,37 +8,37 @@
     tools:context="com.example.mirella.badaniewzroku.MainActivity">
 
     <EditText
-        android:id="@+id/wpiszImie"
+        android:id="@+id/name"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="50dp"
         android:layout_weight="1"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Imię:" />
+        android:hint="Imię:" />
 
     <EditText
-        android:id="@+id/wpiszNazwisko"
+        android:id="@+id/surname"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="50dp"
         android:layout_weight="1"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Nazwisko:" />
+        android:hint="Nazwisko:" />
 
     <EditText
-        android:id="@+id/wpiszWiek"
+        android:id="@+id/age"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="50dp"
         android:layout_weight="1"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Wiek:" />
+        android:hint="Wiek" />
 
     <Button
-        android:id="@+id/btnGotowe"
+        android:id="@+id/btn_ready"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"

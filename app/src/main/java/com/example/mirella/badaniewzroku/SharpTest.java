@@ -198,7 +198,8 @@ public class SharpTest extends AppCompatActivity {
 
                  if(count>3 && count <=7) {
                      RelativeLayout.LayoutParams parms = new RelativeLayout.LayoutParams(180,180);
-                    
+                     parms.addRule(RelativeLayout.CENTER_HORIZONTAL);
+                     parms.addRule(RelativeLayout.CENTER_VERTICAL);
                      imageE.setLayoutParams(parms);
                  }
                  else if(count >7 && count <=11)
