@@ -34,11 +34,12 @@ public class DaltonismTest extends AppCompatActivity {
         btn_ready = (Button) findViewById(R.id.btn_ready);
         imageD = (ImageView) findViewById(R.id.imageD);
         numberPicker = (NumberPicker) findViewById(R.id.numberPicker);
-        numberPicker.setMaxValue(100);
+        numberPicker.setMaxValue(15);
         numberPicker.setMinValue(0);
 
-        final int[] images_1 = {R.drawable.i_3, R.drawable.i_5, R.drawable.i_7,
-                R.drawable.i_9, R.drawable.i_18, R.drawable.i_29, R.drawable.i_35, R.drawable.i_42, R.drawable.i_74, R.drawable.i_96};
+        final int[] images_1 = {R.drawable.i_1, R.drawable.i_2, R.drawable.i_3,
+                R.drawable.i_4, R.drawable.i_5, R.drawable.i_6, R.drawable.i_6a, R.drawable.i_7, R.drawable.i_8, R.drawable.i_8a,
+                R.drawable.i_9, R.drawable.i_99, R.drawable.i_10a, R.drawable.i_10a};
         number_1 = rnd.nextInt(9);
         imageD.setImageResource(images_1[number_1]);
 
@@ -54,25 +55,25 @@ public class DaltonismTest extends AppCompatActivity {
 
 
                 if (count >= 0 && count <= 10) {
-                    if (number_1 == 0 & value == 3) {
+                    if (number_1 == 0 & value == 1) {
                         sum += 1;
-                    } else if (number_1 == 1 & value == 5) {
+                    } else if (number_1 == 1 & value == 2) {
                         sum += 1;
-                    } else if (number_1 == 2 & value == 7) {
+                    } else if (number_1 == 2 & value == 3) {
                         sum += 1;
-                    } else if (number_1 == 3 & value == 9) {
+                    } else if (number_1 == 3 & value == 4) {
                         sum += 1;
-                    } else if (number_1 == 4 & value == 18) {
+                    } else if (number_1 == 4 & value == 5) {
                         sum += 1;
-                    } else if (number_1 == 5 & value == 29) {
+                    } else if (number_1 == 5 || number_1 == 6 & value == 6) {
                         sum += 1;
-                    } else if (number_1 == 6 & value == 35) {
+                    } else if (number_1 == 7 & value == 7) {
                         sum += 1;
-                    } else if (number_1 == 7 & value == 42) {
+                    } else if (number_1 == 8 || number_1 == 9 & value == 8) {
                         sum += 1;
-                    } else if (number_1 == 8 & value == 74) {
+                    } else if (number_1 == 10 || number_1 == 11 & value == 9) {
                         sum += 1;
-                    } else if (number_1 == 9 & value == 96) {
+                    } else if (number_1 == 12 || number_1 == 13 & value == 10) {
                         sum += 1;
                     }
 
