@@ -34,17 +34,22 @@ public class MainActivity extends AppCompatActivity {
         btn_ready.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                if (TextUtils.isEmpty(user_name) || TextUtils.isEmpty(user_surname) || TextUtils.isEmpty(user_age)) {
-//                    name.setHint("Wpisz swoje imię!");
-//                    surname.setHint("Wpisz swoje nazwisko!");
-//                    age.setHint("Wpisz swój wiek!");
-//
-//                }
-//                else {
-                Intent intent = new Intent(MainActivity.this, MainView.class);
-                startActivity(intent);
-                
-//                }
+                if (TextUtils.isEmpty(user_name) || TextUtils.isEmpty(user_surname) || TextUtils.isEmpty(user_age)) {
+                    name.setHint("Wpisz swoje imię!");
+                    surname.setHint("Wpisz swoje nazwisko!");
+                    age.setHint("Wpisz swój wiek!");
+                    Intent intent = new Intent(MainActivity.this, MainView.class);
+                    //Intent sendData= new Intent(MainActivity.this, Results.class);
+                    intent.putExtra("Name",name.getText().toString());
+                    intent.putExtra("Surname",surname.getText().toString());
+                    intent.putExtra("Age",age.getText().toString());
+                    //startActivity(sendData);
+                    startActivity(intent);
+                }
+                else
+                {
+
+                }
             }
         });
     }

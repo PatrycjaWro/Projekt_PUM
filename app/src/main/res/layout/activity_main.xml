@@ -41,7 +41,6 @@
         android:id="@+id/btn_ready"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
         android:background="@color/colorPrimary"
         android:text="Gotowe!"
         android:textColor="@android:color/white" />
