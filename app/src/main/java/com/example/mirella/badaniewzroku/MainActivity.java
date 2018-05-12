@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
 //                else {
                 Intent intent = new Intent(MainActivity.this, MainView.class);
                 startActivity(intent);
+                
 //                }
             }
         });
