@@ -21,11 +21,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-        btn_ready = (Button) findViewById(R.id.btn_ready);
+        btn_ready = findViewById(R.id.btn_ready);
         name = findViewById(R.id.name);
-        surname = (EditText) findViewById(R.id.surname);
-        age = (EditText) findViewById(R.id.age);
+        surname = findViewById(R.id.surname);
+        age = findViewById(R.id.age);
 
         btn_ready = findViewById(R.id.btn_ready);
         name = findViewById(R.id.name);
@@ -46,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
                     age.setHint("Wpisz swój wiek!");
                     Intent intent = new Intent(MainActivity.this, MainView.class);
                     startActivity(intent);
+
                 }
                 else {
 

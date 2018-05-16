@@ -20,7 +20,7 @@
         <activity android:name=".MainView" />
         <activity android:name=".ContrastTest" />
         <activity android:name=".DaltonismTest" />
-        <activity android:name=".GeneralTest"></activity>
+        <activity android:name=".GeneralTest" />
     </application>
 
 </manifest>
