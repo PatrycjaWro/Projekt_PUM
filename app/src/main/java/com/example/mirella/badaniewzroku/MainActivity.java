@@ -44,11 +44,11 @@ public class MainActivity extends AppCompatActivity {
                     name.setHint("Wpisz swoje imię!");
                     surname.setHint("Wpisz swoje nazwisko!");
                     age.setHint("Wpisz swój wiek!");
-
-                }
-                else {
                     Intent intent = new Intent(MainActivity.this, MainView.class);
                     startActivity(intent);
+                }
+                else {
+
 
                 }
             }

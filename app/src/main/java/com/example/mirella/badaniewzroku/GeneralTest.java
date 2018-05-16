@@ -2,33 +2,49 @@ package com.example.mirella.badaniewzroku;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
+import java.util.ArrayList;
+
 public class GeneralTest extends AppCompatActivity {
 
     Button btn_ready2;
-    ListView listView;
+    @BindView(R.id.recycleList)
+    RecyclerView recycleList;
+
+
     int count = 0;
-    private String[] data = {"Praca przy komputerze", "Przebywanie w suchym powietrzu", "Przebywanie w zadymionych pomieszczeniach", "Praca przy słabym oświetleniu", "Palenie papierosów", "Niezdrowe odżywianie", "Częste korzystanie z małych ekranów (telefon, tablet)", "Długie czytanie książek", "Noszenie cudzych okularów"};
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        listView = (ListView) findViewById(R.id.listView);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_general_test);
+        ButterKnife.bind(this);
 
-        listView = new ListView(this);
-        listView.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_multiple_choice, data));
-        listView.setItemsCanFocus(true);
-        listView.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
+        ArrayList<GeneralTestItem> list = new ArrayList<GeneralTestItem>();
+        list.add(new GeneralTestItem("Praca przy komputerze"));
+        list.add(new GeneralTestItem("Przebywanie w suchym powietrzu"));
+        list.add(new GeneralTestItem("Przebywanie w zadymionych pomieszczeniach"));
+        list.add(new GeneralTestItem("Praca przy słabym oświetleniu"));
+        list.add(new GeneralTestItem("Palenie papierosów"));
+        list.add(new GeneralTestItem("Niezdrowe odżywianie"));
+        list.add(new GeneralTestItem("Częste korzystanie z małych ekranów (telefon, tablet)"));
+        list.add(new GeneralTestItem("Długie czytanie książek"));
+        list.add(new GeneralTestItem("Noszenie cudzych okularów"));
 
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
+        recycleList.setLayoutManager(layoutManager);
 
-
-        count = listView.getCheckedItemCount();
-
-
+        final GeneraTestItemAdapter generaTestItemAdapter= new GeneraTestItemAdapter(list);
+        recycleList.setAdapter(generaTestItemAdapter);
     }
 
 
