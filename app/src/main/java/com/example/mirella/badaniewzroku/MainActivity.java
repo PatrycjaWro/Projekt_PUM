@@ -7,7 +7,6 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         btn_ready = (Button) findViewById(R.id.btn_ready);
-        name = (EditText) findViewById(R.id.name);
+        name = findViewById(R.id.name);
         surname = (EditText) findViewById(R.id.surname);
         age = (EditText) findViewById(R.id.age);
 
@@ -39,15 +38,12 @@ public class MainActivity extends AppCompatActivity {
                     surname.setHint("Wpisz swoje nazwisko!");
                     age.setHint("Wpisz swój wiek!");
                     Intent intent = new Intent(MainActivity.this, MainView.class);
-                    //Intent sendData= new Intent(MainActivity.this, Results.class);
-                    intent.putExtra("Name",name.getText().toString());
-                    intent.putExtra("Surname",surname.getText().toString());
-                    intent.putExtra("Age",age.getText().toString());
-                    //startActivity(sendData);
+                    intent.putExtra("Name", name.getText().toString());
+                    intent.putExtra("Surname", surname.getText().toString());
+                    intent.putExtra("Age", age.getText().toString());
                     startActivity(intent);
-                }
-                else
-                {
+
+                } else {
 
                 }
             }

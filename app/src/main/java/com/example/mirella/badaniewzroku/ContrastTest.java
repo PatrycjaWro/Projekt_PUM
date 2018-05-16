@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import java.util.Random;
@@ -176,56 +175,20 @@ public class ContrastTest extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (count >= 0 && count <= 3) {
-                    switch (number_1) {
-                        case 2:
-                            sum += 1;
-                            count += 1;
-                            break;
-                        default:
-                            sum += 0;
-                            count += 1;
-                            break;
-                    }
+                    test();
                     number_1 = rnd.nextInt(4);
                     imageC.setImageResource(images_1[number_1]);
                 }
                 if (count > 3 && count <= 7) {
-                    switch (number_1) {
-                        case 2:
-                            sum += 1;
-                            count += 1;
-                            break;
-                        default:
-                            sum += 0;
-                            count += 1;
-                            break;
-                    }
+                    test();
                     number_1 = rnd.nextInt(4);
                     imageC.setImageResource(images_2[number_1]);
                 } else if (count > 7 && count <= 11) {
-                    switch (number_1) {
-                        case 2:
-                            sum += 1;
-                            count += 1;
-                            break;
-                        default:
-                            sum += 0;
-                            count += 1;
-                            break;
-                    }
+                    test();
                     number_1 = rnd.nextInt(4);
                     imageC.setImageResource(images_3[number_1]);
                 } else if (count > 11 && count <= 15) {
-                    switch (number_1) {
-                        case 2:
-                            sum += 1;
-                            count += 1;
-                            break;
-                        default:
-                            sum += 0;
-                            count += 1;
-                            break;
-                    }
+                    test();
                     number_1 = rnd.nextInt(4);
                     imageC.setImageResource(images_4[number_1]);
                 } else if (count > 15) {
@@ -294,12 +257,25 @@ public class ContrastTest extends AppCompatActivity {
                     number_1 = rnd.nextInt(4);
                     imageC.setImageResource(images_4[number_1]);
                 } else if (count > 15) {
-                    Toast.makeText(ContrastTest.this, "Badanie zakończone!",
+                    Toast.makeText(ContrastTest.this, R.string.finish_test,
                             Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(ContrastTest.this, MainView.class);
                     startActivity(intent);
                 }
             }
         });
+    }
+
+    private void test() {
+        switch (number_1) {
+            case 2:
+                sum += 1;
+                count += 1;
+                break;
+            default:
+                sum += 0;
+                count += 1;
+                break;
+        }
     }
 }
