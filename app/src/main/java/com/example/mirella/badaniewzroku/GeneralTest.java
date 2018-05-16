@@ -1,26 +1,38 @@
 package com.example.mirella.badaniewzroku;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.ListView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 import java.util.ArrayList;
 
 public class GeneralTest extends AppCompatActivity {
 
-    Button btn_ready2;
+    @BindView(R.id.ready_button)
+    Button ready_button;
     @BindView(R.id.recycleList)
     RecyclerView recycleList;
 
 
     int count = 0;
+
+    @OnClick(R.id.ready_button)
+            public void Exit()
+    {
+
+        Intent intent = new Intent(GeneralTest.this,MainView.class);
+        startActivity(intent);
+    }
 
 
     @Override
@@ -46,6 +58,7 @@ public class GeneralTest extends AppCompatActivity {
         final GeneraTestItemAdapter generaTestItemAdapter= new GeneraTestItemAdapter(list);
         recycleList.setAdapter(generaTestItemAdapter);
     }
+
 
 
 }
