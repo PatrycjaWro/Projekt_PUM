@@ -15,18 +15,16 @@ public class MainView extends AppCompatActivity {
     protected Button ContrastTest_btn;
     protected Button testWidzenia_btn;
     protected Button testOgolny_btn;
-    protected Button results_btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_view);
 
-        SharpTest_btn = (Button) findViewById(R.id.SharpTest_btn);
-        ContrastTest_btn = (Button) findViewById(R.id.ContrastTest_btn);
-        testWidzenia_btn = (Button) findViewById(R.id.testWidzenia_btn);
-        testOgolny_btn = (Button) findViewById(R.id.testOgolny_btn);
-        results_btn=(Button)findViewById(R.id.results_btn);
+        SharpTest_btn = findViewById(R.id.SharpTest_btn);
+        ContrastTest_btn = findViewById(R.id.ContrastTest_btn);
+        testWidzenia_btn = findViewById(R.id.testWidzenia_btn);
+        testOgolny_btn = findViewById(R.id.testOgolny_btn);
 
         SharpTest_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -100,14 +98,5 @@ public class MainView extends AppCompatActivity {
                 alertDialog.show();
             }
         });
-
-        results_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainView.this, Results.class);
-                startActivity(intent);
-            }
-        });
-        
     }
 }
