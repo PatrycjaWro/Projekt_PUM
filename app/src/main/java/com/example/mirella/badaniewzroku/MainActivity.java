@@ -48,10 +48,6 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else {
                     Intent intent = new Intent(MainActivity.this, MainView.class);
-
-                    intent.putExtra("Name", name.getText().toString());
-                    intent.putExtra("Surname", surname.getText().toString());
-                    intent.putExtra("Age", age.getText().toString());
                     startActivity(intent);
 
                 }
