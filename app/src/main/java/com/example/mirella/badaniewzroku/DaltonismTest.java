@@ -1,8 +1,11 @@
 package com.example.mirella.badaniewzroku;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -36,9 +39,9 @@ public class DaltonismTest extends AppCompatActivity {
         numberPicker.setMaxValue(15);
         numberPicker.setMinValue(0);
 
-        final int[] images_1 = {R.drawable.i_1, R.drawable.i_2, R.drawable.i_3,
-                R.drawable.i_4, R.drawable.i_5, R.drawable.i_6, R.drawable.i_6a, R.drawable.i_7, R.drawable.i_8, R.drawable.i_8a,
-                R.drawable.i_9, R.drawable.i_99, R.drawable.i_10a, R.drawable.i_10a};
+        final int[] images_1 = {R.drawable.i1, R.drawable.i2, R.drawable.i3,
+                R.drawable.i4, R.drawable.i5, R.drawable.i6, R.drawable.i66, R.drawable.i7, R.drawable.i8, R.drawable.i88,
+                R.drawable.i9, R.drawable.i99};
         number_1 = rnd.nextInt(9);
         imageD.setImageResource(images_1[number_1]);
 
@@ -53,49 +56,40 @@ public class DaltonismTest extends AppCompatActivity {
                 int value = numberPicker.getValue();
 
 
-                if (count >= 0 && count <= 10) {
-                    if (number_1 == 0 & value == 1) {
-                        sum += 1;
-                    } else if (number_1 == 1 & value == 2) {
-                        sum += 1;
-                    } else if (number_1 == 2 & value == 3) {
-                        sum += 1;
-                    } else if (number_1 == 3 & value == 4) {
-                        sum += 1;
-                    } else if (number_1 == 4 & value == 5) {
-                        sum += 1;
-                    } else if (number_1 == 5 || number_1 == 6 & value == 6) {
-                        sum += 1;
-                    } else if (number_1 == 7 & value == 7) {
-                        sum += 1;
-                    } else if (number_1 == 8 || number_1 == 9 & value == 8) {
-                        sum += 1;
-                    } else if (number_1 == 10 || number_1 == 11 & value == 9) {
-                        sum += 1;
-                    } else if (number_1 == 12 || number_1 == 13 & value == 10) {
+                if (count < 10) {
+                    int a = images_1[number_1];
+                    String imageName = getResources().getResourceName(a);
+                    imageName = imageName.substring(imageName.lastIndexOf("/") + 1);
+                    imageName = imageName.substring(imageName.length() - 1);
+                    String val = "" + value;
+
+                    if (imageName.equals(val)) {
                         sum += 1;
                     }
-
-
                     number_1 = rnd.nextInt(9);
                     imageD.setImageResource(images_1[number_1]);
-
                     count += 1;
-
-                    if (count == 10) {
-                        imageD.setVisibility(View.INVISIBLE);
-                        numberPicker.setVisibility(View.INVISIBLE);
-                        Toast.makeText(DaltonismTest.this, "Badanie zakończone!",
-                                Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(DaltonismTest.this, MainView.class);
-                        startActivity(intent);
-                    }
-
+                } else {
+                    imageD.setVisibility(View.INVISIBLE);
+                    numberPicker.setVisibility(View.INVISIBLE);
+                    AlertDialog alertDialog = new AlertDialog.Builder(DaltonismTest.this).create();
+                    alertDialog.setTitle("Wynik badania");
+                    alertDialog.setMessage("Wynik twojego badania to " + sum + "/10");
+                    alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.dismiss();
+                                    Intent intent = new Intent(DaltonismTest.this, MainView.class);
+                                    startActivity(intent);
+                                }
+                            });
+                    alertDialog.show();
                 }
 
 
             }
         });
+
 
     }
 }

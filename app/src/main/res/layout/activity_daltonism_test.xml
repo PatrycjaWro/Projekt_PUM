@@ -27,7 +27,8 @@
         android:layout_below="@+id/textView"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="4dp"
-        android:src="@drawable/i_3" />
+        android:src="@drawable/i3"
+        />
 
     <NumberPicker
         android:id="@+id/numberPicker"
