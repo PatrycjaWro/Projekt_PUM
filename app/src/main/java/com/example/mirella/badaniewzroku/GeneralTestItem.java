@@ -2,24 +2,44 @@ package com.example.mirella.badaniewzroku;
 
 import android.support.v7.widget.RecyclerView;
 
+import java.io.Serializable;
+
 /**
  * Created by patry on 16.05.2018.
  */
 
-public class GeneralTestItem {
+public class GeneralTestItem implements Serializable {
 
-    public String getChangeText() {
-        return changeText;
+    private String name;
+
+    private boolean isSelected;
+
+    public GeneralTestItem() {
+
     }
 
-    public void setChangeText(String changeText) {
-        this.changeText = changeText;
+
+    public GeneralTestItem(String name, boolean isSelected) {
+
+        this.name = name;
+        this.isSelected = isSelected;
     }
 
-    private String changeText;
+    public String getName() {
+        return name;
+    }
 
-    public GeneralTestItem(String changeText) {
-        this.changeText = changeText;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+
+    public boolean isSelected() {
+        return isSelected;
+    }
+
+    public void setSelected(boolean isSelected) {
+        this.isSelected = isSelected;
     }
 
 

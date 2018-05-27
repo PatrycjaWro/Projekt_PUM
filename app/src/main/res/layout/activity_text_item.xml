@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/textViewGeneralTest"
+        android:id="@+id/tvName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
@@ -16,7 +16,7 @@
         tools:layout_editor_absoluteY="3dp" />
 
     <CheckBox
-        android:id="@+id/checkBox"
+        android:id="@+id/chkSelected"
         android:layout_marginRight="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
