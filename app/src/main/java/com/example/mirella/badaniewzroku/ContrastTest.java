@@ -56,7 +56,15 @@ public class ContrastTest extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (count >= 0 && count <= 3) {
-                    Case_0();
+                    if (number_1 == 0) {
+                        sum += 1;
+                        count += 1;
+
+                    } else {
+                        sum += 0;
+                        count += 1;
+
+                    }
                     number_1 = rnd.nextInt(4);
                     imageC.setImageResource(images_1[number_1]);
                 }
@@ -76,7 +84,7 @@ public class ContrastTest extends AppCompatActivity {
 
                     String a=Integer.toString(sum);
                     //saveAsFile(a);
-                    saveFile(ContrastTest.this,"dane",a);
+                    save(a);
                     AlertDialog();
                 }
             }
@@ -106,7 +114,7 @@ public class ContrastTest extends AppCompatActivity {
 
                     String a=Integer.toString(sum);
                     //saveAsFile(a);
-                    saveFile(ContrastTest.this,"dane",a);
+                    save(a);
                     AlertDialog();
                 }
             }
@@ -136,7 +144,7 @@ public class ContrastTest extends AppCompatActivity {
 
                     String a=Integer.toString(sum);
                     //saveAsFile(a);
-                    saveFile(ContrastTest.this,"dane",a);
+                    save(a);
                     AlertDialog();
                 }
             }
@@ -166,7 +174,7 @@ public class ContrastTest extends AppCompatActivity {
 
                     String a=Integer.toString(sum);
                     //saveAsFile(a);
-                    saveFile(ContrastTest.this,"dane",a);
+                    save(a);
                     AlertDialog();
                 }
             }
@@ -250,9 +258,6 @@ public class ContrastTest extends AppCompatActivity {
             out.write(text);
             out.close();
             return true;
-
-
-
         } catch (IOException e) {
             e.printStackTrace();
             Log.e("1","blad zapisu");
@@ -260,39 +265,47 @@ public class ContrastTest extends AppCompatActivity {
         }
     }
 
-    private void saveAsFile(String content){
-        String fileName = "AnalysisData.csv";
-        File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath(),fileName);
-        //Toast.makeText(ContrastTest.this,"zapisano",Toast.LENGTH_SHORT).show();
-        if(file.exists() && !file.isDirectory()){
-            try {
-                FileOutputStream fos = new FileOutputStream(file);
-                fos.write(content.getBytes());
-                fos.write('\n');
-                fos.write(';');
+//    private void saveAsFile(String content){
+//        String fileName = "AnalysisData.csv";
+//        File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath(),fileName);
+//        //Toast.makeText(ContrastTest.this,"zapisano",Toast.LENGTH_SHORT).show();
+//        if(file.exists() && !file.isDirectory()){
+//            try {
+//                FileOutputStream fos = new FileOutputStream(file);
+//                fos.write(content.getBytes());
+//                fos.write('\n');
+//                fos.write(';');
+//                //fos.append(content.getBytes());
+//                //fos.append(",");
+//                //fos.append("\n");
+//                fos.flush();
+//                fos.close();
+//                Toast.makeText(ContrastTest.this,"zapisano",Toast.LENGTH_SHORT).show();
+//            } catch (FileNotFoundException e) {
+//                e.printStackTrace();
+//            } catch (IOException e){
+//                e.printStackTrace();
+//            }
+//        }
+//        else{
+//            try {
+//                FileOutputStream fos = new FileOutputStream(file);
+//                Toast.makeText(ContrastTest.this,"problem",Toast.LENGTH_SHORT).show();
+//                //writer = new CSVWriter(new FileWriter(filePath));
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+//        }
+//    }
 
-                //fos.append(content.getBytes());
-                //fos.append(",");
-                //fos.append("\n");
-
-
-                fos.flush();
-                fos.close();
-                Toast.makeText(ContrastTest.this,"zapisano",Toast.LENGTH_SHORT).show();
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            } catch (IOException e){
-                e.printStackTrace();
-            }
-        }
-        else{
-            try {
-                FileOutputStream fos = new FileOutputStream(file);
-                Toast.makeText(ContrastTest.this,"problem",Toast.LENGTH_SHORT).show();
-                //writer = new CSVWriter(new FileWriter(filePath));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+    private void save(String sum){
+        try {
+            File path = Environment.getExternalStoragePublicDirectory(
+                    Environment.DIRECTORY_DOWNLOADS);
+            File sdCardFile = new File(path, "dane.csv");
+            CSVWriter.writePath(sdCardFile,sum);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 

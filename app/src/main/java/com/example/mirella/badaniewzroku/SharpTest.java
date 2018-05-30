@@ -169,7 +169,7 @@ public class SharpTest extends AppCompatActivity {
     private void AlertDialog (){
         AlertDialog alertDialog = new AlertDialog.Builder(SharpTest.this).create();
         alertDialog.setTitle("Wynik badania");
-        alertDialog.setMessage("Wynik twojego badania to " + sum + "/19");
+        alertDialog.setMessage("Wynik twojego badania to " + sum + "/20");
         alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
