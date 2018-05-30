@@ -33,9 +33,9 @@ public class DaltonismTest extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_daltonism_test);
 
-        btn_ready = (Button) findViewById(R.id.btn_ready);
-        imageD = (ImageView) findViewById(R.id.imageD);
-        numberPicker = (NumberPicker) findViewById(R.id.numberPicker);
+        btn_ready = findViewById(R.id.btn_ready);
+        imageD = findViewById(R.id.imageD);
+        numberPicker = findViewById(R.id.numberPicker);
         numberPicker.setMaxValue(15);
         numberPicker.setMinValue(0);
 

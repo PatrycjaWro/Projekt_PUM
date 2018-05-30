@@ -23,10 +23,8 @@ public class GeneralTest extends AppCompatActivity {
     Button btn_show;
     @BindView(R.id.my_recycler_view)
     RecyclerView my_recycler_view;
-    private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
-    private List<GeneralTestItem> itemList;
     int count = 0;
 
     @Override
@@ -35,17 +33,17 @@ public class GeneralTest extends AppCompatActivity {
         setContentView(R.layout.activity_general_test);
         ButterKnife.bind(this);
 
-        itemList = new ArrayList<GeneralTestItem>();
+        List<GeneralTestItem> itemList = new ArrayList<GeneralTestItem>();
         itemList.add(new GeneralTestItem("Praca przy komputerze", false));
         itemList.add(new GeneralTestItem("Przebywanie w suchym powietrzu", false));
-        itemList.add(new GeneralTestItem("Przebywanie w zadymionych pomieszczeniach", false));
         itemList.add(new GeneralTestItem("Praca przy słabym oświetleniu", false));
         itemList.add(new GeneralTestItem("Palenie papierosów", false));
         itemList.add(new GeneralTestItem("Niezdrowe odżywianie", false));
-        itemList.add(new GeneralTestItem("Częste korzystanie z małych ekranów (telefon, tablet)", false));
+        itemList.add(new GeneralTestItem("Częste korzystanie z telefonu)", false));
+        itemList.add(new GeneralTestItem("Częste korzystanie z tabletu)", false));
         itemList.add(new GeneralTestItem("Długie czytanie książek", false));
         itemList.add(new GeneralTestItem("Noszenie cudzych okularów", false));
-        mRecyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
+        RecyclerView mRecyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mAdapter = new GeneraTestItemAdapter(itemList);

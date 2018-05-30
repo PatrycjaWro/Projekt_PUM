@@ -59,11 +59,11 @@ public class ContrastTest extends AppCompatActivity {
                     number_1 = rnd.nextInt(4);
                     imageC.setImageResource(images_3[number_1]);
                 } else if (count > 11 && count <= 15) {
-                   Case_0();
+                    Case_0();
                     number_1 = rnd.nextInt(4);
                     imageC.setImageResource(images_4[number_1]);
                 } else if (count > 15) {
-                   AlertDialog();
+                    AlertDialog();
                 }
             }
         });
@@ -85,11 +85,11 @@ public class ContrastTest extends AppCompatActivity {
                     number_1 = rnd.nextInt(4);
                     imageC.setImageResource(images_3[number_1]);
                 } else if (count > 11 && count <= 15) {
-                   Case_1();
+                    Case_1();
                     number_1 = rnd.nextInt(4);
                     imageC.setImageResource(images_4[number_1]);
                 } else if (count > 15) {
-                   AlertDialog();
+                    AlertDialog();
                 }
             }
         });
@@ -124,12 +124,12 @@ public class ContrastTest extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (count >= 0 && count <= 3) {
-                   Case_3();
+                    Case_3();
                     number_1 = rnd.nextInt(4);
                     imageC.setImageResource(images_1[number_1]);
                 }
                 if (count > 3 && count <= 7) {
-                   Case_3();
+                    Case_3();
                     number_1 = rnd.nextInt(4);
                     imageC.setImageResource(images_2[number_1]);
                 } else if (count > 7 && count <= 11) {
@@ -199,7 +199,7 @@ public class ContrastTest extends AppCompatActivity {
         }
     }
 
-    private void AlertDialog (){
+    private void AlertDialog() {
         AlertDialog alertDialog = new AlertDialog.Builder(ContrastTest.this).create();
         alertDialog.setTitle("Wynik badania");
         alertDialog.setMessage("Wynik twojego badania to " + sum + "/19");

@@ -32,24 +32,20 @@ public class MainActivity extends AppCompatActivity {
         age = findViewById(R.id.age);
 
 
-        final String user_name = name.getText().toString();
-        final String user_surname = surname.getText().toString();
-        final String user_age = age.getText().toString();
-
         btn_ready.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                final String user_name = name.getText().toString();
+                final String user_surname = surname.getText().toString();
+                final String user_age = age.getText().toString();
+
                 if (TextUtils.isEmpty(user_name) || TextUtils.isEmpty(user_surname) || TextUtils.isEmpty(user_age)) {
                     name.setHint("Wpisz swoje imię!");
                     surname.setHint("Wpisz swoje nazwisko!");
                     age.setHint("Wpisz swój wiek!");
+                } else {
                     Intent intent = new Intent(MainActivity.this, MainView.class);
                     startActivity(intent);
-
-                }
-                else {
-
-
                 }
             }
         });
