@@ -3,13 +3,18 @@ package com.example.mirella.badaniewzroku;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Environment;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.Toast;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
@@ -68,6 +73,10 @@ public class ContrastTest extends AppCompatActivity {
                     number_1 = rnd.nextInt(4);
                     imageC.setImageResource(images_4[number_1]);
                 } else if (count > 15) {
+
+                    String a=Integer.toString(sum);
+                    //saveAsFile(a);
+                    saveFile(ContrastTest.this,"dane",a);
                     AlertDialog();
                 }
             }
@@ -94,6 +103,10 @@ public class ContrastTest extends AppCompatActivity {
                     number_1 = rnd.nextInt(4);
                     imageC.setImageResource(images_4[number_1]);
                 } else if (count > 15) {
+
+                    String a=Integer.toString(sum);
+                    //saveAsFile(a);
+                    saveFile(ContrastTest.this,"dane",a);
                     AlertDialog();
                 }
             }
@@ -120,6 +133,10 @@ public class ContrastTest extends AppCompatActivity {
                     number_1 = rnd.nextInt(4);
                     imageC.setImageResource(images_4[number_1]);
                 } else if (count > 15) {
+
+                    String a=Integer.toString(sum);
+                    //saveAsFile(a);
+                    saveFile(ContrastTest.this,"dane",a);
                     AlertDialog();
                 }
             }
@@ -146,6 +163,10 @@ public class ContrastTest extends AppCompatActivity {
                     number_1 = rnd.nextInt(4);
                     imageC.setImageResource(images_4[number_1]);
                 } else if (count > 15) {
+
+                    String a=Integer.toString(sum);
+                    //saveAsFile(a);
+                    saveFile(ContrastTest.this,"dane",a);
                     AlertDialog();
                 }
             }
@@ -205,6 +226,7 @@ public class ContrastTest extends AppCompatActivity {
     }
 
     private void AlertDialog() {
+
         AlertDialog alertDialog = new AlertDialog.Builder(ContrastTest.this).create();
         alertDialog.setTitle("Wynik badania");
         alertDialog.setMessage("Wynik twojego badania to " + sum + "/19");
@@ -217,18 +239,63 @@ public class ContrastTest extends AppCompatActivity {
                     }
                 });
         alertDialog.show();
+
     }
 
     public boolean saveFile(Context context, String fileName, String text){
+        Toast.makeText(ContrastTest.this,"zapisano",Toast.LENGTH_SHORT).show();
         try {
             FileOutputStream fos = context.openFileOutput(context.getFilesDir().getAbsolutePath() + "/" + fileName +".csv",Context.MODE_PRIVATE);
             Writer out = new OutputStreamWriter(fos);
             out.write(text);
             out.close();
             return true;
+
+
+
         } catch (IOException e) {
             e.printStackTrace();
+            Log.e("1","blad zapisu");
             return false;
         }
     }
+
+    private void saveAsFile(String content){
+        String fileName = "AnalysisData.csv";
+        File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath(),fileName);
+        //Toast.makeText(ContrastTest.this,"zapisano",Toast.LENGTH_SHORT).show();
+        if(file.exists() && !file.isDirectory()){
+            try {
+                FileOutputStream fos = new FileOutputStream(file);
+                fos.write(content.getBytes());
+                fos.write('\n');
+                fos.write(';');
+
+                //fos.append(content.getBytes());
+                //fos.append(",");
+                //fos.append("\n");
+
+
+                fos.flush();
+                fos.close();
+                Toast.makeText(ContrastTest.this,"zapisano",Toast.LENGTH_SHORT).show();
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            } catch (IOException e){
+                e.printStackTrace();
+            }
+        }
+        else{
+            try {
+                FileOutputStream fos = new FileOutputStream(file);
+                Toast.makeText(ContrastTest.this,"problem",Toast.LENGTH_SHORT).show();
+                //writer = new CSVWriter(new FileWriter(filePath));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+
+
 }
