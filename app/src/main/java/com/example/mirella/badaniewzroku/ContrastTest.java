@@ -1,24 +1,18 @@
 package com.example.mirella.badaniewzroku;
 
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Environment;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.OutputStreamWriter;
-import java.io.Writer;
 import java.util.Random;
 
 public class ContrastTest extends AppCompatActivity {
@@ -56,35 +50,25 @@ public class ContrastTest extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (count >= 0 && count <= 3) {
-                    if (number_1 == 0) {
-                        sum += 1;
-                        count += 1;
-
-                    } else {
-                        sum += 0;
-                        count += 1;
-
-                    }
+                    Case_2();
                     number_1 = rnd.nextInt(4);
                     imageC.setImageResource(images_1[number_1]);
                 }
                 if (count > 3 && count <= 7) {
-                    Case_0();
+                    Case_2();
                     number_1 = rnd.nextInt(4);
                     imageC.setImageResource(images_2[number_1]);
                 } else if (count > 7 && count <= 11) {
-                    Case_0();
+                    Case_2();
                     number_1 = rnd.nextInt(4);
                     imageC.setImageResource(images_3[number_1]);
                 } else if (count > 11 && count <= 15) {
-                    Case_0();
+                    Case_2();
                     number_1 = rnd.nextInt(4);
                     imageC.setImageResource(images_4[number_1]);
                 } else if (count > 15) {
-
                     String a=Integer.toString(sum);
-                    //saveAsFile(a);
-                    save(a);
+                    Save(a);
                     AlertDialog();
                 }
             }
@@ -111,10 +95,8 @@ public class ContrastTest extends AppCompatActivity {
                     number_1 = rnd.nextInt(4);
                     imageC.setImageResource(images_4[number_1]);
                 } else if (count > 15) {
-
                     String a=Integer.toString(sum);
-                    //saveAsFile(a);
-                    save(a);
+                    Save(a);
                     AlertDialog();
                 }
             }
@@ -124,27 +106,25 @@ public class ContrastTest extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (count >= 0 && count <= 3) {
-                    Case_2();
+                    Case_0();
                     number_1 = rnd.nextInt(4);
                     imageC.setImageResource(images_1[number_1]);
                 }
                 if (count > 3 && count <= 7) {
-                    Case_2();
+                    Case_0();
                     number_1 = rnd.nextInt(4);
                     imageC.setImageResource(images_2[number_1]);
                 } else if (count > 7 && count <= 11) {
-                    Case_2();
+                    Case_0();
                     number_1 = rnd.nextInt(4);
                     imageC.setImageResource(images_3[number_1]);
                 } else if (count > 11 && count <= 15) {
-                    Case_2();
+                    Case_0();
                     number_1 = rnd.nextInt(4);
                     imageC.setImageResource(images_4[number_1]);
                 } else if (count > 15) {
-
                     String a=Integer.toString(sum);
-                    //saveAsFile(a);
-                    save(a);
+                    Save(a);
                     AlertDialog();
                 }
             }
@@ -171,10 +151,8 @@ public class ContrastTest extends AppCompatActivity {
                     number_1 = rnd.nextInt(4);
                     imageC.setImageResource(images_4[number_1]);
                 } else if (count > 15) {
-
                     String a=Integer.toString(sum);
-                    //saveAsFile(a);
-                    save(a);
+                    Save(a);
                     AlertDialog();
                 }
             }
@@ -237,7 +215,7 @@ public class ContrastTest extends AppCompatActivity {
 
         AlertDialog alertDialog = new AlertDialog.Builder(ContrastTest.this).create();
         alertDialog.setTitle("Wynik badania");
-        alertDialog.setMessage("Wynik twojego badania to " + sum + "/19");
+        alertDialog.setMessage("Wynik twojego badania to " + sum + "/15");
         alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
@@ -250,60 +228,12 @@ public class ContrastTest extends AppCompatActivity {
 
     }
 
-    public boolean saveFile(Context context, String fileName, String text){
-        Toast.makeText(ContrastTest.this,"zapisano",Toast.LENGTH_SHORT).show();
-        try {
-            FileOutputStream fos = context.openFileOutput(context.getFilesDir().getAbsolutePath() + "/" + fileName +".csv",Context.MODE_PRIVATE);
-            Writer out = new OutputStreamWriter(fos);
-            out.write(text);
-            out.close();
-            return true;
-        } catch (IOException e) {
-            e.printStackTrace();
-            Log.e("1","blad zapisu");
-            return false;
-        }
-    }
-
-//    private void saveAsFile(String content){
-//        String fileName = "AnalysisData.csv";
-//        File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath(),fileName);
-//        //Toast.makeText(ContrastTest.this,"zapisano",Toast.LENGTH_SHORT).show();
-//        if(file.exists() && !file.isDirectory()){
-//            try {
-//                FileOutputStream fos = new FileOutputStream(file);
-//                fos.write(content.getBytes());
-//                fos.write('\n');
-//                fos.write(';');
-//                //fos.append(content.getBytes());
-//                //fos.append(",");
-//                //fos.append("\n");
-//                fos.flush();
-//                fos.close();
-//                Toast.makeText(ContrastTest.this,"zapisano",Toast.LENGTH_SHORT).show();
-//            } catch (FileNotFoundException e) {
-//                e.printStackTrace();
-//            } catch (IOException e){
-//                e.printStackTrace();
-//            }
-//        }
-//        else{
-//            try {
-//                FileOutputStream fos = new FileOutputStream(file);
-//                Toast.makeText(ContrastTest.this,"problem",Toast.LENGTH_SHORT).show();
-//                //writer = new CSVWriter(new FileWriter(filePath));
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//        }
-//    }
-
-    private void save(String sum){
+    private void Save(String sums){
         try {
             File path = Environment.getExternalStoragePublicDirectory(
                     Environment.DIRECTORY_DOWNLOADS);
             File sdCardFile = new File(path, "dane.csv");
-            CSVWriter.writePath(sdCardFile,sum);
+            CSVWriter.writePath(sdCardFile,sums);
         } catch (IOException e) {
             e.printStackTrace();
         }
