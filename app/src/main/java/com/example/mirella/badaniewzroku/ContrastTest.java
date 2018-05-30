@@ -1,5 +1,6 @@
 package com.example.mirella.badaniewzroku;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AlertDialog;
@@ -9,6 +10,10 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.io.Writer;
 import java.util.Random;
 
 public class ContrastTest extends AppCompatActivity {
@@ -212,5 +217,18 @@ public class ContrastTest extends AppCompatActivity {
                     }
                 });
         alertDialog.show();
+    }
+
+    public boolean saveFile(Context context, String fileName, String text){
+        try {
+            FileOutputStream fos = context.openFileOutput(context.getFilesDir().getAbsolutePath() + "/" + fileName +".csv",Context.MODE_PRIVATE);
+            Writer out = new OutputStreamWriter(fos);
+            out.write(text);
+            out.close();
+            return true;
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
+        }
     }
 }
