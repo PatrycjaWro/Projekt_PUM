@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Random;
 
@@ -68,7 +69,7 @@ public class ContrastTest extends AppCompatActivity {
                     imageC.setImageResource(images_4[number_1]);
                 } else if (count > 15) {
                     String a=Integer.toString(sum);
-                    Save(a);
+
                     AlertDialog();
                 }
             }
@@ -96,7 +97,7 @@ public class ContrastTest extends AppCompatActivity {
                     imageC.setImageResource(images_4[number_1]);
                 } else if (count > 15) {
                     String a=Integer.toString(sum);
-                    Save(a);
+
                     AlertDialog();
                 }
             }
@@ -124,7 +125,7 @@ public class ContrastTest extends AppCompatActivity {
                     imageC.setImageResource(images_4[number_1]);
                 } else if (count > 15) {
                     String a=Integer.toString(sum);
-                    Save(a);
+
                     AlertDialog();
                 }
             }
@@ -152,7 +153,7 @@ public class ContrastTest extends AppCompatActivity {
                     imageC.setImageResource(images_4[number_1]);
                 } else if (count > 15) {
                     String a=Integer.toString(sum);
-                    Save(a);
+
                     AlertDialog();
                 }
             }
@@ -228,16 +229,10 @@ public class ContrastTest extends AppCompatActivity {
 
     }
 
-    private void Save(String sums){
-        try {
-            File path = Environment.getExternalStoragePublicDirectory(
-                    Environment.DIRECTORY_DOWNLOADS);
-            File sdCardFile = new File(path, "dane.csv");
-            CSVWriter.writePath(sdCardFile,sums);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+public void writeNext(String sum)
+{
+   
+}
 
 
 
