@@ -69,7 +69,7 @@ public class ContrastTest extends AppCompatActivity {
                     imageC.setImageResource(images_4[number_1]);
                 } else if (count > 15) {
                     String a=Integer.toString(sum);
-
+                    writeNext(a);
                     AlertDialog();
                 }
             }
@@ -97,7 +97,7 @@ public class ContrastTest extends AppCompatActivity {
                     imageC.setImageResource(images_4[number_1]);
                 } else if (count > 15) {
                     String a=Integer.toString(sum);
-
+                    writeNext(a);
                     AlertDialog();
                 }
             }
@@ -125,7 +125,7 @@ public class ContrastTest extends AppCompatActivity {
                     imageC.setImageResource(images_4[number_1]);
                 } else if (count > 15) {
                     String a=Integer.toString(sum);
-
+                    writeNext(a);
                     AlertDialog();
                 }
             }
@@ -153,7 +153,7 @@ public class ContrastTest extends AppCompatActivity {
                     imageC.setImageResource(images_4[number_1]);
                 } else if (count > 15) {
                     String a=Integer.toString(sum);
-
+                    writeNext(a);
                     AlertDialog();
                 }
             }
@@ -229,11 +229,21 @@ public class ContrastTest extends AppCompatActivity {
 
     }
 
-public void writeNext(String sum)
-{
-   
+public void writeNext(String sum)  {
+        File sdcard= new File(Environment.getExternalStorageDirectory()+ "/DCIM/dane.csv");
+    try
+    {
+        FileWriter writer = new FileWriter(sdcard,true);
+        writer.append("Wynik testu kontrastu:");
+        writer.append(',');
+        writer.append(sum);
+        writer.append('\n');
+        writer.flush();
+        writer.close();
+    }
+    catch(IOException e)
+    {
+        e.printStackTrace();
+    }
 }
-
-
-
 }

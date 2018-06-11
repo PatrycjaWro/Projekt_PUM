@@ -1,6 +1,7 @@
 package com.example.mirella.badaniewzroku;
 
 import android.content.Intent;
+import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -13,6 +14,9 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -70,7 +74,26 @@ public class GeneralTest extends AppCompatActivity {
 
         Intent intent = new Intent(GeneralTest.this, MainView.class);
         startActivity(intent);
+        String a=Integer.toString(count);
+        writeNext(a);
     }
 
+    public void writeNext(String sum)  {
+        File sdcard= new File(Environment.getExternalStorageDirectory()+ "/DCIM/dane.csv");
+        try
+        {
+            FileWriter writer = new FileWriter(sdcard,true);
+            writer.append("Wynik testu ogólnego:");
+            writer.append(',');
+            writer.append(sum);
+            writer.append('\n');
+            writer.flush();
+            writer.close();
+        }
+        catch(IOException e)
+        {
+            e.printStackTrace();
+        }
+    }
 
 }

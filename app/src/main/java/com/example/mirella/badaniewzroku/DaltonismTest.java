@@ -4,6 +4,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Build;
+import android.os.Environment;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -14,6 +15,9 @@ import android.widget.ImageView;
 import android.widget.NumberPicker;
 import android.widget.Toast;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Random;
 
 public class DaltonismTest extends AppCompatActivity {
@@ -84,6 +88,8 @@ public class DaltonismTest extends AppCompatActivity {
                                 }
                             });
                     alertDialog.show();
+                    String a=Integer.toString(sum);
+                    writeNext(a);
                 }
 
 
@@ -91,5 +97,22 @@ public class DaltonismTest extends AppCompatActivity {
         });
 
 
+    }
+    public void writeNext(String sum)  {
+        File sdcard= new File(Environment.getExternalStorageDirectory()+ "/DCIM/dane.csv");
+        try
+        {
+            FileWriter writer = new FileWriter(sdcard,true);
+            writer.append("Wynik testu na daltonizm:");
+            writer.append(',');
+            writer.append(sum);
+            writer.append('\n');
+            writer.flush();
+            writer.close();
+        }
+        catch(IOException e)
+        {
+            e.printStackTrace();
+        }
     }
 }

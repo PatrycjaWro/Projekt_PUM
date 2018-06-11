@@ -2,6 +2,7 @@ package com.example.mirella.badaniewzroku;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Environment;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,6 +11,9 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Random;
 
 public class SharpTest extends AppCompatActivity {
@@ -64,6 +68,8 @@ public class SharpTest extends AppCompatActivity {
                 } else if (count > 15 && count <= 19) {
                     SetLayout(70,70);
                 } else if (count > 19) {
+                    String a=Integer.toString(sum);
+                    writeNext(a);
                    AlertDialog();
                 }
             }
@@ -92,8 +98,11 @@ public class SharpTest extends AppCompatActivity {
                 } else if (count > 11 && count <= 15) {
                     SetLayout(100,100);
                 } else if (count > 15 && count <= 19) {
+
                     SetLayout(70,70);
                 } else if (count > 19) {
+                    String a=Integer.toString(sum);
+                    writeNext(a);
                     AlertDialog();
                 }
             }
@@ -124,6 +133,8 @@ public class SharpTest extends AppCompatActivity {
                 } else if (count > 15 && count <= 19) {
                     SetLayout(70,70);
                 } else if (count > 19) {
+                    String a=Integer.toString(sum);
+                    writeNext(a);
                     AlertDialog();
                 }
             }
@@ -153,6 +164,8 @@ public class SharpTest extends AppCompatActivity {
                 } else if (count > 15 && count <= 19) {
                     SetLayout(70,70);
                 } else if (count > 19) {
+                    String a=Integer.toString(sum);
+                    writeNext(a);
                    AlertDialog();
                 }
             }
@@ -179,5 +192,23 @@ public class SharpTest extends AppCompatActivity {
                     }
                 });
         alertDialog.show();
+    }
+
+    public void writeNext(String sum)  {
+        File sdcard= new File(Environment.getExternalStorageDirectory()+ "/DCIM/dane.csv");
+        try
+        {
+            FileWriter writer = new FileWriter(sdcard,true);
+            writer.append("Wynik testu ostrości:");
+            writer.append(',');
+            writer.append(sum);
+            writer.append('\n');
+            writer.flush();
+            writer.close();
+        }
+        catch(IOException e)
+        {
+            e.printStackTrace();
+        }
     }
 }
