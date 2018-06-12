@@ -1,12 +1,6 @@
 package com.example.mirella.badaniewzroku;
 
-import android.support.v7.widget.RecyclerView;
-
 import java.io.Serializable;
-
-/**
- * Created by patry on 16.05.2018.
- */
 
 public class GeneralTestItem implements Serializable {
 

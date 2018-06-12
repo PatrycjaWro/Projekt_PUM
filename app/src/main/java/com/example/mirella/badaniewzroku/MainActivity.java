@@ -18,6 +18,8 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -99,16 +101,28 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void Save(String filename, String name, String surname, String age) {
+        String timeStamp = new SimpleDateFormat("yyyy-MM-dd").format(Calendar.getInstance().getTime());
         try {
             File root = Environment.getExternalStoragePublicDirectory(
                     Environment.DIRECTORY_DCIM);
             File gpxfile = new File(root, filename);
             FileWriter writer = new FileWriter(gpxfile);
+            writer.append("Imię:");
+            writer.append(',');
+            writer.append("Nazwisko:");
+            writer.append(',');
+            writer.append("Wiek:");
+            writer.append(',');
+            writer.append("Data:");
+            writer.append('\n');
             writer.append(name);
             writer.append(',');
             writer.append(surname);
             writer.append(',');
             writer.append(age);
+            writer.append(',');
+            writer.append(timeStamp);
+            writer.append('\n');
             writer.append('\n');
             writer.flush();
             writer.close();
@@ -119,6 +133,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void writeData(String data, String strFilePath) {
         PrintWriter csvWriter;
+        String timeStamp = new SimpleDateFormat("yyyy-MM-dd").format(Calendar.getInstance().getTime());
         try {
             File file = new File(strFilePath);
             csvWriter = new PrintWriter(new FileWriter(file, true));

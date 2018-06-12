@@ -9,11 +9,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Random;
 
 public class ContrastTest extends AppCompatActivity {
@@ -231,7 +232,7 @@ public class ContrastTest extends AppCompatActivity {
 
 public void writeNext(String sum)  {
         File sdcard= new File(Environment.getExternalStorageDirectory()+ "/DCIM/dane.csv");
-    try
+            try
     {
         FileWriter writer = new FileWriter(sdcard,true);
         writer.append("Wynik testu kontrastu:");

@@ -64,10 +64,10 @@ public class GeneraTestItemAdapter extends RecyclerView.Adapter<GeneraTestItemAd
 
         public ViewHolder(View itemView) {
             super(itemView);
-            tvName = (TextView) itemView.findViewById(R.id.tvName);
+            tvName = itemView.findViewById(R.id.tvName);
 
 
-            chkSelected = (CheckBox) itemView
+            chkSelected = itemView
                     .findViewById(R.id.chkSelected);
         }
     }

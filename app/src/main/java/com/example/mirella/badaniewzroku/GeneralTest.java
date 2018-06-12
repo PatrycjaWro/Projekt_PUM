@@ -47,7 +47,7 @@ public class GeneralTest extends AppCompatActivity {
         itemList.add(new GeneralTestItem("Częste korzystanie z tabletu)", false));
         itemList.add(new GeneralTestItem("Długie czytanie książek", false));
         itemList.add(new GeneralTestItem("Noszenie cudzych okularów", false));
-        RecyclerView mRecyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
+        RecyclerView mRecyclerView = findViewById(R.id.my_recycler_view);
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mAdapter = new GeneraTestItemAdapter(itemList);
