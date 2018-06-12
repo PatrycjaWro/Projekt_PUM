@@ -17,50 +17,42 @@ import android.widget.EditText;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
 
-    protected Button btn_ready;
-    protected EditText name;
-    protected EditText surname;
-    protected EditText age;
+    private EditText name;
+    private EditText surname;
+    private EditText age;
 
-    public boolean isReadStoragePermissionGranted() {
+    private void isReadStoragePermissionGranted() {
         if (Build.VERSION.SDK_INT >= 23) {
             if (checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
                     == PackageManager.PERMISSION_GRANTED) {
                 Log.v("TAG", "Permission is granted1");
-                return true;
             } else {
 
                 Log.v("TAG", "Permission is revoked1");
                 ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 3);
-                return false;
             }
         } else { //permission is automatically granted on sdk<23 upon installation
             Log.v("TAG", "Permission is granted1");
-            return true;
         }
     }
 
-    public boolean isWriteStoragePermissionGranted() {
+    private void isWriteStoragePermissionGranted() {
         if (Build.VERSION.SDK_INT >= 23) {
             if (checkSelfPermission(android.Manifest.permission.WRITE_EXTERNAL_STORAGE)
                     == PackageManager.PERMISSION_GRANTED) {
                 Log.v("TAG", "Permission is granted2");
-                return true;
             } else {
 
                 Log.v("TAG", "Permission is revoked2");
                 ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 2);
-                return false;
             }
         } else { //permission is automatically granted on sdk<23 upon installation
             Log.v("TAG", "Permission is granted2");
-            return true;
         }
     }
 
@@ -72,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
         isWriteStoragePermissionGranted();
         setContentView(R.layout.activity_main);
 
-        btn_ready = findViewById(R.id.btn_ready);
+        Button btn_ready = findViewById(R.id.btn_ready);
         name = findViewById(R.id.name);
         surname = findViewById(R.id.surname);
         age = findViewById(R.id.age);
@@ -80,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
         name = findViewById(R.id.name);
         surname = findViewById(R.id.surname);
         age = findViewById(R.id.age);
+
         btn_ready.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -94,18 +87,18 @@ public class MainActivity extends AppCompatActivity {
                     Intent intent = new Intent(MainActivity.this, MainView.class);
                     startActivity(intent);
                     String dane = user_name + "\r\n" + user_surname + user_age;
-                    Save("dane.csv", user_name, user_surname, user_age);
+                    Save(user_name, user_surname, user_age);
                 }
             }
         });
     }
 
-    private void Save(String filename, String name, String surname, String age) {
+    private void Save(String name, String surname, String age) {
         String timeStamp = new SimpleDateFormat("yyyy-MM-dd").format(Calendar.getInstance().getTime());
         try {
             File root = Environment.getExternalStoragePublicDirectory(
                     Environment.DIRECTORY_DCIM);
-            File gpxfile = new File(root, filename);
+            File gpxfile = new File(root, "dane.csv");
             FileWriter writer = new FileWriter(gpxfile);
             writer.append("Imię:");
             writer.append(',');
@@ -131,18 +124,4 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void writeData(String data, String strFilePath) {
-        PrintWriter csvWriter;
-        String timeStamp = new SimpleDateFormat("yyyy-MM-dd").format(Calendar.getInstance().getTime());
-        try {
-            File file = new File(strFilePath);
-            csvWriter = new PrintWriter(new FileWriter(file, true));
-            csvWriter.print(data + "," + "hello");
-            csvWriter.append('\n');
-            csvWriter.print("world");
-            csvWriter.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 }

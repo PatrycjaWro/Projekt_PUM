@@ -13,7 +13,7 @@ import java.util.List;
 public class GeneraTestItemAdapter extends RecyclerView.Adapter<GeneraTestItemAdapter.ViewHolder> {
 
 
-    private List<GeneralTestItem> stList;
+    private final List<GeneralTestItem> stList;
 
     public GeneraTestItemAdapter(List<GeneralTestItem> students) {
         this.stList = students;
@@ -24,9 +24,8 @@ public class GeneraTestItemAdapter extends RecyclerView.Adapter<GeneraTestItemAd
     public GeneraTestItemAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemLayoutView = LayoutInflater.from(parent.getContext()).inflate(
                 R.layout.activity_text_item, null);
-        ViewHolder viewHolder = new ViewHolder(itemLayoutView);
 
-        return viewHolder;
+        return new ViewHolder(itemLayoutView);
 
 
     }
@@ -56,10 +55,10 @@ public class GeneraTestItemAdapter extends RecyclerView.Adapter<GeneraTestItemAd
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        public TextView tvName;
+        public final TextView tvName;
 
 
-        public CheckBox chkSelected;
+        public final CheckBox chkSelected;
 
 
         public ViewHolder(View itemView) {

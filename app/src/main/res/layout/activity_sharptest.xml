@@ -25,7 +25,8 @@
         android:layout_marginTop="110dp"
         android:background="@color/colorPrimary"
         android:src="@drawable/ic_arrow_upward_black_24dp"
-        android:contentDescription="TODO" />
+        android:contentDescription="TODO"
+        tools:ignore="ContentDescription" />
 
     <ImageButton
         android:id="@+id/btn_left"
@@ -35,7 +36,8 @@
         android:layout_marginTop="210dp"
         android:background="@color/colorPrimary"
         android:src="@drawable/ic_arrow_back_black_24dp"
-        android:contentDescription="TODO" />
+        android:contentDescription="TODO"
+        tools:ignore="ContentDescription" />
 
     <ImageButton
         android:id="@+id/btn_right"
@@ -46,7 +48,8 @@
         android:layout_marginTop="210dp"
         android:background="@color/colorPrimary"
         android:src="@drawable/ic_arrow_forward_black_24dp"
-        android:contentDescription="TODO" />
+        android:contentDescription="TODO"
+        tools:ignore="ContentDescription" />
 
     <ImageButton
         android:id="@+id/btn_down"
@@ -58,7 +61,8 @@
         android:layout_marginBottom="110dp"
         android:background="@color/colorPrimary"
         android:src="@drawable/ic_arrow_downward_black_24dp"
-        android:contentDescription="TODO" />
+        android:contentDescription="TODO"
+        tools:ignore="ContentDescription" />
 
     <ImageView
         android:id="@+id/imageE"
@@ -66,6 +70,7 @@
         android:layout_height="90dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:contentDescription="TODO" />
+        android:contentDescription="TODO"
+        tools:ignore="ContentDescription" />
 
 </RelativeLayout>

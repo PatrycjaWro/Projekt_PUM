@@ -18,25 +18,21 @@ import java.util.Random;
 
 public class SharpTest extends AppCompatActivity {
 
-    protected ImageButton btn_up;
-    protected ImageButton btn_down;
-    protected ImageButton btn_left;
-    protected ImageButton btn_right;
-    protected ImageView imageE;
-    final Random rnd = new Random();
-    int sum = 0;
-    int count = 0;
-    int number;
+    private ImageView imageE;
+    private final Random rnd = new Random();
+    private int sum = 0;
+    private int count = 0;
+    private int number;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sharptest);
 
-        btn_down = findViewById(R.id.btn_down);
-        btn_up = findViewById(R.id.btn_up);
-        btn_right = findViewById(R.id.btn_right);
-        btn_left = findViewById(R.id.btn_left);
+        ImageButton btn_down = findViewById(R.id.btn_down);
+        ImageButton btn_up = findViewById(R.id.btn_up);
+        ImageButton btn_right = findViewById(R.id.btn_right);
+        ImageButton btn_left = findViewById(R.id.btn_left);
         imageE = findViewById(R.id.imageE);
 
         final int[] images = {R.drawable.e_0, R.drawable.e_1, R.drawable.e_2, R.drawable.e_3};
@@ -194,7 +190,7 @@ public class SharpTest extends AppCompatActivity {
         alertDialog.show();
     }
 
-    public void writeNext(String sum)  {
+    private void writeNext(String sum)  {
         File sdcard= new File(Environment.getExternalStorageDirectory()+ "/DCIM/dane.csv");
         try
         {

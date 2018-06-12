@@ -2,29 +2,21 @@ package com.example.mirella.badaniewzroku;
 
 import java.io.Serializable;
 
-public class GeneralTestItem implements Serializable {
+class GeneralTestItem implements Serializable {
 
     private String name;
 
     private boolean isSelected;
 
-    public GeneralTestItem() {
 
-    }
-
-
-    public GeneralTestItem(String name, boolean isSelected) {
+    public GeneralTestItem(String name) {
 
         this.name = name;
-        this.isSelected = isSelected;
+        this.isSelected = false;
     }
 
     public String getName() {
         return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
 

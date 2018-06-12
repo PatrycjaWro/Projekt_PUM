@@ -13,31 +13,25 @@ import android.widget.ImageView;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Random;
 
 public class ContrastTest extends AppCompatActivity {
 
-    protected ImageButton btn_up;
-    protected ImageButton btn_down;
-    protected ImageButton btn_left;
-    protected ImageButton btn_right;
-    protected ImageView imageC;
-    final Random rnd = new Random();
-    int sum = 0;
-    int count = 0;
-    int number_1;
+    private ImageView imageC;
+    private final Random rnd = new Random();
+    private int sum = 0;
+    private int count = 0;
+    private int number_1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contrast_test);
 
-        btn_down = findViewById(R.id.btn_down);
-        btn_up = findViewById(R.id.btn_up);
-        btn_right = findViewById(R.id.btn_left);
-        btn_left = findViewById(R.id.btn_right);
+        ImageButton btn_down = findViewById(R.id.btn_down);
+        ImageButton btn_up = findViewById(R.id.btn_up);
+        ImageButton btn_right = findViewById(R.id.btn_left);
+        ImageButton btn_left = findViewById(R.id.btn_right);
         imageC = findViewById(R.id.imageC);
 
         final int[] images_1 = {R.drawable.c_0, R.drawable.c_1, R.drawable.c_2, R.drawable.c_3};
@@ -230,7 +224,7 @@ public class ContrastTest extends AppCompatActivity {
 
     }
 
-public void writeNext(String sum)  {
+private void writeNext(String sum)  {
         File sdcard= new File(Environment.getExternalStorageDirectory()+ "/DCIM/dane.csv");
             try
     {

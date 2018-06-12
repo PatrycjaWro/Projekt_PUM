@@ -10,22 +10,17 @@ import android.widget.Button;
 
 public class MainView extends AppCompatActivity {
 
-    protected Button SharpTest_btn;
-    protected Button ContrastTest_btn;
-    protected Button testWidzenia_btn;
-    protected Button testOgolny_btn;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_view);
 
-        SharpTest_btn = findViewById(R.id.SharpTest_btn);
-        ContrastTest_btn = findViewById(R.id.ContrastTest_btn);
-        testWidzenia_btn = findViewById(R.id.testWidzenia_btn);
-        testOgolny_btn = findViewById(R.id.testOgolny_btn);
+        Button sharpTest_btn = findViewById(R.id.SharpTest_btn);
+        Button contrastTest_btn = findViewById(R.id.ContrastTest_btn);
+        Button testWidzenia_btn = findViewById(R.id.testWidzenia_btn);
+        Button testOgolny_btn = findViewById(R.id.testOgolny_btn);
 
-        SharpTest_btn.setOnClickListener(new View.OnClickListener() {
+        sharpTest_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -44,7 +39,7 @@ public class MainView extends AppCompatActivity {
             }
         });
 
-        ContrastTest_btn.setOnClickListener(new View.OnClickListener() {
+        contrastTest_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 AlertDialog alertDialog = new AlertDialog.Builder(MainView.this).create();

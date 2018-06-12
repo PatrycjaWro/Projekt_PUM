@@ -21,13 +21,12 @@ import java.util.Random;
 public class DaltonismTest extends AppCompatActivity {
 
 
-    protected Button btn_ready;
-    protected ImageView imageD;
-    protected NumberPicker numberPicker;
-    final Random rnd = new Random();
-    int sum = 0;
-    int count = 0;
-    int number_1;
+    private ImageView imageD;
+    private NumberPicker numberPicker;
+    private final Random rnd = new Random();
+    private int sum = 0;
+    private int count = 0;
+    private int number_1;
 
 
     @Override
@@ -35,7 +34,7 @@ public class DaltonismTest extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_daltonism_test);
 
-        btn_ready = findViewById(R.id.btn_ready);
+        Button btn_ready = findViewById(R.id.btn_ready);
         imageD = findViewById(R.id.imageD);
         numberPicker = findViewById(R.id.numberPicker);
         numberPicker.setMaxValue(15);
@@ -96,7 +95,7 @@ public class DaltonismTest extends AppCompatActivity {
 
 
     }
-    public void writeNext(String sum)  {
+    private void writeNext(String sum)  {
         File sdcard= new File(Environment.getExternalStorageDirectory()+ "/DCIM/dane.csv");
         try
         {
