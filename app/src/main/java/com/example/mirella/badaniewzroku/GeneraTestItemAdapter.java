@@ -9,25 +9,18 @@ import android.widget.TextView;
 
 import java.util.List;
 
-
 public class GeneraTestItemAdapter extends RecyclerView.Adapter<GeneraTestItemAdapter.ViewHolder> {
-
-
     private final List<GeneralTestItem> stList;
 
     public GeneraTestItemAdapter(List<GeneralTestItem> students) {
         this.stList = students;
-
     }
 
     @Override
     public GeneraTestItemAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemLayoutView = LayoutInflater.from(parent.getContext()).inflate(
                 R.layout.activity_text_item, null);
-
         return new ViewHolder(itemLayoutView);
-
-
     }
 
     @Override
@@ -39,11 +32,8 @@ public class GeneraTestItemAdapter extends RecyclerView.Adapter<GeneraTestItemAd
             public void onClick(View v) {
                 CheckBox cb = (CheckBox) v;
                 GeneralTestItem contact = (GeneralTestItem) cb.getTag();
-
                 contact.setSelected(cb.isChecked());
                 stList.get(pos).setSelected(cb.isChecked());
-
-
             }
         });
     }
@@ -56,10 +46,7 @@ public class GeneraTestItemAdapter extends RecyclerView.Adapter<GeneraTestItemAd
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         public final TextView tvName;
-
-
         public final CheckBox chkSelected;
-
 
         public ViewHolder(View itemView) {
             super(itemView);

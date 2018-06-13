@@ -20,7 +20,6 @@ import java.util.Random;
 
 public class DaltonismTest extends AppCompatActivity {
 
-
     private ImageView imageD;
     private NumberPicker numberPicker;
     private final Random rnd = new Random();
@@ -28,12 +27,10 @@ public class DaltonismTest extends AppCompatActivity {
     private int count = 0;
     private int number_1;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_daltonism_test);
-
         Button btn_ready = findViewById(R.id.btn_ready);
         imageD = findViewById(R.id.imageD);
         numberPicker = findViewById(R.id.numberPicker);
@@ -46,17 +43,13 @@ public class DaltonismTest extends AppCompatActivity {
         number_1 = rnd.nextInt(9);
         imageD.setImageResource(images_1[number_1]);
 
-
         btn_ready.setOnClickListener(new View.OnClickListener() {
 
 
             @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void onClick(View view) {
-
                 int value = numberPicker.getValue();
-
-
                 if (count < 10) {
                     int a = images_1[number_1];
                     String imageName = getResources().getResourceName(a);
@@ -74,9 +67,9 @@ public class DaltonismTest extends AppCompatActivity {
                     imageD.setVisibility(View.INVISIBLE);
                     numberPicker.setVisibility(View.INVISIBLE);
                     AlertDialog alertDialog = new AlertDialog.Builder(DaltonismTest.this).create();
-                    alertDialog.setTitle("Wynik badania");
-                    alertDialog.setMessage("Wynik twojego badania to " + sum + "/10");
-                    alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                    alertDialog.setTitle(getString(R.string.result_of_test));
+                    alertDialog.setMessage(getString(R.string.result_from_test) + sum + "/10");
+                    alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, getString(R.string.ok),
                             new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int which) {
                                     dialog.dismiss();
@@ -85,30 +78,24 @@ public class DaltonismTest extends AppCompatActivity {
                                 }
                             });
                     alertDialog.show();
-                    String a=Integer.toString(sum);
+                    String a = Integer.toString(sum);
                     writeNext(a);
                 }
-
-
             }
         });
-
-
     }
-    private void writeNext(String sum)  {
-        File sdcard= new File(Environment.getExternalStorageDirectory()+ "/DCIM/dane.csv");
-        try
-        {
-            FileWriter writer = new FileWriter(sdcard,true);
-            writer.append("Wynik testu na daltonizm:");
+
+    private void writeNext(String sum) {
+        File sdcard = new File(Environment.getExternalStorageDirectory() + getString(R.string.path));
+        try {
+            FileWriter writer = new FileWriter(sdcard, true);
+            writer.append(getString(R.string.daltonism_result));
             writer.append(',');
             writer.append(sum);
             writer.append('\n');
             writer.flush();
             writer.close();
-        }
-        catch(IOException e)
-        {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }

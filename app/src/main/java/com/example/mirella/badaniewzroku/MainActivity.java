@@ -9,7 +9,6 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -30,14 +29,10 @@ public class MainActivity extends AppCompatActivity {
         if (Build.VERSION.SDK_INT >= 23) {
             if (checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
                     == PackageManager.PERMISSION_GRANTED) {
-                Log.v("TAG", "Permission is granted1");
             } else {
-
-                Log.v("TAG", "Permission is revoked1");
                 ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 3);
             }
         } else { //permission is automatically granted on sdk<23 upon installation
-            Log.v("TAG", "Permission is granted1");
         }
     }
 
@@ -45,25 +40,19 @@ public class MainActivity extends AppCompatActivity {
         if (Build.VERSION.SDK_INT >= 23) {
             if (checkSelfPermission(android.Manifest.permission.WRITE_EXTERNAL_STORAGE)
                     == PackageManager.PERMISSION_GRANTED) {
-                Log.v("TAG", "Permission is granted2");
             } else {
-
-                Log.v("TAG", "Permission is revoked2");
                 ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 2);
             }
         } else { //permission is automatically granted on sdk<23 upon installation
-            Log.v("TAG", "Permission is granted2");
         }
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         isReadStoragePermissionGranted();
         isWriteStoragePermissionGranted();
         setContentView(R.layout.activity_main);
-
         Button btn_ready = findViewById(R.id.btn_ready);
         name = findViewById(R.id.name);
         surname = findViewById(R.id.surname);
@@ -80,9 +69,9 @@ public class MainActivity extends AppCompatActivity {
                 final String user_surname = surname.getText().toString();
                 final String user_age = age.getText().toString();
                 if (TextUtils.isEmpty(user_name) || TextUtils.isEmpty(user_surname) || TextUtils.isEmpty(user_age)) {
-                    name.setHint("Wpisz swoje imię!");
-                    surname.setHint("Wpisz swoje nazwisko!");
-                    age.setHint("Wpisz swój wiek!");
+                    name.setHint(R.string.alert_name);
+                    surname.setHint(R.string.alert_surname);
+                    age.setHint(R.string.alert_age);
                 } else {
                     Intent intent = new Intent(MainActivity.this, MainView.class);
                     startActivity(intent);
@@ -94,19 +83,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void Save(String name, String surname, String age) {
-        String timeStamp = new SimpleDateFormat("yyyy-MM-dd").format(Calendar.getInstance().getTime());
+        String timeStamp = new SimpleDateFormat(getString(R.string.date_format)).format(Calendar.getInstance().getTime());
         try {
             File root = Environment.getExternalStoragePublicDirectory(
                     Environment.DIRECTORY_DCIM);
-            File gpxfile = new File(root, "dane.csv");
+            File gpxfile = new File(root, getString(R.string.file_name));
             FileWriter writer = new FileWriter(gpxfile);
-            writer.append("Imię:");
+            writer.append(getString(R.string.name));
             writer.append(',');
-            writer.append("Nazwisko:");
+            writer.append(getString(R.string.surname));
             writer.append(',');
-            writer.append("Wiek:");
+            writer.append(getString(R.string.age));
             writer.append(',');
-            writer.append("Data:");
+            writer.append(getString(R.string.date));
             writer.append('\n');
             writer.append(name);
             writer.append(',');

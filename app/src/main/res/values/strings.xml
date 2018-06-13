@@ -1,3 +1,35 @@
 <resources>
     <string name="app_name">Badanie wzroku</string>
+    <string name="result_of_test">Wynik badania</string>
+    <string name="instruction">Instrukcja</string>
+    <string name="understand">Rozumiem i przechodzę do badania.</string>
+    <string name="inst_sharpTest">Trzymaj telefon przed sobą na wyciągnięcie ręki. Zaznacz strzałkę pokazującą kierunek zwrotu literki E</string>
+    <string name="inst_contrastTest">Trzymaj telefon przed sobą na wyciągnięcie ręki. Zaznacz strzałkę pokazującą kierunek zwrotu literki C</string>
+    <string name="inst_daltonismTest">Trzymaj telefon przed sobą na wyciągnięcie ręki. Wpisz w określone miejsce liczbę, którą zobaczysz na obrazku.</string>
+    <string name="inst_generalTest">Zaznacz opcje, które Ciebie dotyczą.</string>
+    <string name="result_from_test">Wynik twojego badania to</string>
+    <string name="path">/DCIM/dane.csv</string>
+    <string name="alert_name">Wpisz swoje imię!</string>
+    <string name="alert_surname">Wpisz swoje nazwisko!</string>
+    <string name="alert_age">Wpisz swój wiek!</string>
+    <string name="date_format">yyyy-MM-dd</string>
+    <string name="file_name">dane.csv</string>
+    <string name="name">Imię:</string>
+    <string name="surname">Nazwisko:</string>
+    <string name="age">Wiek:</string>
+    <string name="date">Data:</string>
+    <string name="sharp_result">Wynik testu ostrości:</string>
+    <string name="ok">OK</string>
+    <string name="daltonism_result">Wynik testu na daltonizm:</string>
+    <string name="count_of_elements">Ilość wybranych elementów:</string>
+    <string name="general_result">Wynik testu ogólnego:</string>
+    <string name="example1">Praca przy komputerze</string>
+    <string name="example2">Przebywanie w suchym powietrzu</string>
+    <string name="example3">Praca przy słabym oświetleniu</string>
+    <string name="example4">Palenie papierosów</string>
+    <string name="example5">Niezdrowe odżywianie</string>
+    <string name="example6">Częste korzystanie z telefonu</string>
+    <string name="example7">Częste korzystanie z tabletu</string>
+    <string name="example8">Długie czytanie książek</string>
+    <string name="example9">Noszenie cudzych okularów</string>
 </resources>

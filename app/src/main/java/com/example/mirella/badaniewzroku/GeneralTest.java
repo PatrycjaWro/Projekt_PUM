@@ -33,17 +33,16 @@ public class GeneralTest extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_general_test);
         ButterKnife.bind(this);
-
         List<GeneralTestItem> itemList = new ArrayList<>();
-        itemList.add(new GeneralTestItem("Praca przy komputerze"));
-        itemList.add(new GeneralTestItem("Przebywanie w suchym powietrzu"));
-        itemList.add(new GeneralTestItem("Praca przy słabym oświetleniu"));
-        itemList.add(new GeneralTestItem("Palenie papierosów"));
-        itemList.add(new GeneralTestItem("Niezdrowe odżywianie"));
-        itemList.add(new GeneralTestItem("Częste korzystanie z telefonu"));
-        itemList.add(new GeneralTestItem("Częste korzystanie z tabletu"));
-        itemList.add(new GeneralTestItem("Długie czytanie książek"));
-        itemList.add(new GeneralTestItem("Noszenie cudzych okularów"));
+        itemList.add(new GeneralTestItem(getString(R.string.example1)));
+        itemList.add(new GeneralTestItem(getString(R.string.example2)));
+        itemList.add(new GeneralTestItem(getString(R.string.example3)));
+        itemList.add(new GeneralTestItem(getString(R.string.example4)));
+        itemList.add(new GeneralTestItem(getString(R.string.example5)));
+        itemList.add(new GeneralTestItem(getString(R.string.example6)));
+        itemList.add(new GeneralTestItem(getString(R.string.example7)));
+        itemList.add(new GeneralTestItem(getString(R.string.example8)));
+        itemList.add(new GeneralTestItem(getString(R.string.example9)));
         RecyclerView mRecyclerView = findViewById(R.id.my_recycler_view);
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -59,38 +58,30 @@ public class GeneralTest extends AppCompatActivity {
         for (int i = 0; i < stList.size(); i++) {
             GeneralTestItem sItem = stList.get(i);
             if (sItem.isSelected()) {
-
                 count = count + 1;
-
             }
-
         }
         Toast.makeText(GeneralTest.this,
-                "Ilość wybranych elementów: \n" + count, Toast.LENGTH_LONG)
+                getString(R.string.count_of_elements) + count, Toast.LENGTH_LONG)
                 .show();
-
         Intent intent = new Intent(GeneralTest.this, MainView.class);
         startActivity(intent);
-        String a=Integer.toString(count);
+        String a = Integer.toString(count);
         writeNext(a);
     }
 
-    private void writeNext(String sum)  {
-        File sdcard= new File(Environment.getExternalStorageDirectory()+ "/DCIM/dane.csv");
-        try
-        {
-            FileWriter writer = new FileWriter(sdcard,true);
-            writer.append("Wynik testu ogólnego:");
+    private void writeNext(String sum) {
+        File sdcard = new File(Environment.getExternalStorageDirectory() + getString(R.string.path));
+        try {
+            FileWriter writer = new FileWriter(sdcard, true);
+            writer.append(getString(R.string.general_result));
             writer.append(',');
             writer.append(sum);
             writer.append('\n');
             writer.flush();
             writer.close();
-        }
-        catch(IOException e)
-        {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
-
 }

@@ -5,9 +5,7 @@ import java.io.Serializable;
 class GeneralTestItem implements Serializable {
 
     private String name;
-
     private boolean isSelected;
-
 
     public GeneralTestItem(String name) {
 
@@ -19,7 +17,6 @@ class GeneralTestItem implements Serializable {
         return name;
     }
 
-
     public boolean isSelected() {
         return isSelected;
     }
@@ -27,6 +24,4 @@ class GeneralTestItem implements Serializable {
     public void setSelected(boolean isSelected) {
         this.isSelected = isSelected;
     }
-
-
 }

@@ -28,17 +28,14 @@ public class SharpTest extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sharptest);
-
         ImageButton btn_down = findViewById(R.id.btn_down);
         ImageButton btn_up = findViewById(R.id.btn_up);
         ImageButton btn_right = findViewById(R.id.btn_right);
         ImageButton btn_left = findViewById(R.id.btn_left);
         imageE = findViewById(R.id.imageE);
-
         final int[] images = {R.drawable.e_0, R.drawable.e_1, R.drawable.e_2, R.drawable.e_3};
         number = rnd.nextInt(4);
         imageE.setImageResource(images[number]);
-
         btn_left.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -56,21 +53,20 @@ public class SharpTest extends AppCompatActivity {
                 imageE.setImageResource(images[number]);
 
                 if (count > 3 && count <= 7) {
-                    SetLayout(180,180);
+                    SetLayout(180, 180);
                 } else if (count > 7 && count <= 11) {
-                   SetLayout(140,140);
+                    SetLayout(140, 140);
                 } else if (count > 11 && count <= 15) {
-                    SetLayout(100,100);
+                    SetLayout(100, 100);
                 } else if (count > 15 && count <= 19) {
-                    SetLayout(70,70);
+                    SetLayout(70, 70);
                 } else if (count > 19) {
-                    String a=Integer.toString(sum);
+                    String a = Integer.toString(sum);
                     writeNext(a);
-                   AlertDialog();
+                    AlertDialog();
                 }
             }
         });
-
         btn_up.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -88,22 +84,21 @@ public class SharpTest extends AppCompatActivity {
                 imageE.setImageResource(images[number]);
 
                 if (count > 3 && count <= 7) {
-                    SetLayout(180,180);
+                    SetLayout(180, 180);
                 } else if (count > 7 && count <= 11) {
-                    SetLayout(140,140);
+                    SetLayout(140, 140);
                 } else if (count > 11 && count <= 15) {
-                    SetLayout(100,100);
+                    SetLayout(100, 100);
                 } else if (count > 15 && count <= 19) {
 
-                    SetLayout(70,70);
+                    SetLayout(70, 70);
                 } else if (count > 19) {
-                    String a=Integer.toString(sum);
+                    String a = Integer.toString(sum);
                     writeNext(a);
                     AlertDialog();
                 }
             }
         });
-
         btn_right.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -111,7 +106,6 @@ public class SharpTest extends AppCompatActivity {
                     case 2:
                         sum += 1;
                         count += 1;
-
                         break;
                     default:
                         sum += 0;
@@ -121,15 +115,15 @@ public class SharpTest extends AppCompatActivity {
                 number = rnd.nextInt(4);
                 imageE.setImageResource(images[number]);
                 if (count > 3 && count <= 7) {
-                    SetLayout(180,180);
+                    SetLayout(180, 180);
                 } else if (count > 7 && count <= 11) {
-                    SetLayout(140,140);
+                    SetLayout(140, 140);
                 } else if (count > 11 && count <= 15) {
-                    SetLayout(100,100);
+                    SetLayout(100, 100);
                 } else if (count > 15 && count <= 19) {
-                    SetLayout(70,70);
+                    SetLayout(70, 70);
                 } else if (count > 19) {
-                    String a=Integer.toString(sum);
+                    String a = Integer.toString(sum);
                     writeNext(a);
                     AlertDialog();
                 }
@@ -152,34 +146,34 @@ public class SharpTest extends AppCompatActivity {
                 number = rnd.nextInt(4);
                 imageE.setImageResource(images[number]);
                 if (count > 3 && count <= 7) {
-                    SetLayout(180,180);
+                    SetLayout(180, 180);
                 } else if (count > 7 && count <= 11) {
-                    SetLayout(140,140);
+                    SetLayout(140, 140);
                 } else if (count > 11 && count <= 15) {
-                    SetLayout(100,100);
+                    SetLayout(100, 100);
                 } else if (count > 15 && count <= 19) {
-                    SetLayout(70,70);
+                    SetLayout(70, 70);
                 } else if (count > 19) {
-                    String a=Integer.toString(sum);
+                    String a = Integer.toString(sum);
                     writeNext(a);
-                   AlertDialog();
+                    AlertDialog();
                 }
             }
         });
     }
 
     private void SetLayout(int height, int width) {
-        RelativeLayout.LayoutParams parms = new RelativeLayout.LayoutParams(height,width);
+        RelativeLayout.LayoutParams parms = new RelativeLayout.LayoutParams(height, width);
         parms.addRule(RelativeLayout.CENTER_HORIZONTAL);
         parms.addRule(RelativeLayout.CENTER_VERTICAL);
         imageE.setLayoutParams(parms);
     }
 
-    private void AlertDialog (){
+    private void AlertDialog() {
         AlertDialog alertDialog = new AlertDialog.Builder(SharpTest.this).create();
-        alertDialog.setTitle("Wynik badania");
-        alertDialog.setMessage("Wynik twojego badania to " + sum + "/20");
-        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+        alertDialog.setTitle(getString(R.string.result_of_test));
+        alertDialog.setMessage(getString(R.string.result_from_test) + sum + "/20");
+        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, getString(R.string.ok),
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();
@@ -190,20 +184,17 @@ public class SharpTest extends AppCompatActivity {
         alertDialog.show();
     }
 
-    private void writeNext(String sum)  {
-        File sdcard= new File(Environment.getExternalStorageDirectory()+ "/DCIM/dane.csv");
-        try
-        {
-            FileWriter writer = new FileWriter(sdcard,true);
-            writer.append("Wynik testu ostrości:");
+    private void writeNext(String sum) {
+        File sdcard = new File(Environment.getExternalStorageDirectory() + getString(R.string.path));
+        try {
+            FileWriter writer = new FileWriter(sdcard, true);
+            writer.append(getString(R.string.sharp_result));
             writer.append(',');
             writer.append(sum);
             writer.append('\n');
             writer.flush();
             writer.close();
-        }
-        catch(IOException e)
-        {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
